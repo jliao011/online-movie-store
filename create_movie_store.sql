@@ -48,3 +48,7 @@ CREATE TABLE SHOPPING_CART (
     CONSTRAINT fk_shopping_cart_user FOREIGN KEY (user_id) REFERENCES USER(user_id),
     CONSTRAINT fk_shopping_cart_movie FOREIGN KEY (movie_id) REFERENCES MOVIE(movie_id)
 );
+
+
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("A Dog's Purpose","PG","2017",12.99);
+
