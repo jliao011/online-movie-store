@@ -3,7 +3,7 @@
 	$username = $password = "";	
 	$err = "Wrong username or password, please try again.";
 	
-	$conn = new mysqli('localhost', 'root', '', 'create_movie_store');
+	$conn = new mysqli('localhost', 'root', '', 'Movie_store');
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$username = text_input($_POST['username']);
@@ -12,20 +12,22 @@
 	
 	$redirect ="";
 	
-	$query = 'SELECT * FROM `user` WHERE `username`="'.$username.'" or `email`="'.$username.'"' ;	
+	$query = 'SELECT * FROM `user` WHERE `user_name`="'.$username.'" or `user_email`="'.$username.'"' ;	
 	$result = $conn -> query($query);
 	$row = mysqli_fetch_assoc($result);
 	
 	if(mysqli_num_rows($result) == 0){
 		echo $err;
-	} else{
+	} 
+	else{
 		if($password == $row['password']){
 			$_SESSION['username'] = $username;
-			$_SESSION['name'] = $row['name'];
+			$_SESSION['id'] = $row['user_id'];
 			
-			if(strcmp($row['privileges'],"a")){
-				echo 'admin"';
-			} else{
+			if(strcmp($row['user_name'],"admin")){
+				echo 'admin';
+			} 
+			else{
 				echo 'user';
 			}
 		}
@@ -34,8 +36,7 @@
 		}
 	}
 	
-	function text_input($data)
-	{
+	function text_input($data){
  		$data = trim($data);
   		$data = stripslashes($data);
   		$data = htmlspecialchars($data);
