@@ -13,7 +13,7 @@ header {
 }
 nav {
 	position: fixed;
-	top: 100px; left: 20px; right: 20px;
+	top: 100px; left: 20px; right: 120px;
 	border: 1px solid black;
 	padding: 0px;
 }

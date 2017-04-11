@@ -1,10 +1,13 @@
 <?php
 	session_start();
-	$username = $password = "";	
-	$err = "Wrong username or password, please try again.";
+	$username = $password = $err = $usertype = "";	
+
 	
 	$conn = new mysqli('localhost', 'root', 'root', 'Movie_store');
-	
+	if (mysqli_connect_errno()){
+		$err .= "Failed to connect to MySQL: ".mysqli_connect_error()."<br/>";
+	}
+
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$username = text_input($_POST['username']);
 		$password = text_input($_POST['password']);
@@ -17,24 +20,31 @@
 	$row = mysqli_fetch_assoc($result);
 	
 	if(mysqli_num_rows($result) == 0){
-		echo $err;
+		$err .= "User does not exist.";
 	} 
 	else{
-		if(sha1($password) == $row['password']){
-			$_SESSION['username'] = $username;
+		if($password == $row['password']){
+			$_SESSION['username'] = $row['user_name'];
 			$_SESSION['id'] = $row['user_id'];
 			session_write_close();
-			if(strcmp($row['user_name'],"admin")){
-				echo 'admin';
+			$query = "SELECT * FROM ADMIN WHERE user_id = ".$_SESSION['id'].";";
+			$result = $conn -> query($query);
+			$row = mysqli_fetch_assoc($result);
+			if(mysqli_num_rows($result) == 0){
+				$usertype = 'user';
 			} 
 			else{
-				echo 'user';
+				$usertype = 'admin';
 			}
 		}
 		else {
-			echo $err;
+			$err .= "Wrong password, please try again.";
 		}
 	}
+
+
+	$message = array('err'=>$err,'usertype'=>$usertype,'username'=>$_SESSION['username']);
+	echo json_encode($message);
 	
 	function text_input($data){
  		$data = trim($data);

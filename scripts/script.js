@@ -47,6 +47,7 @@ $("document").ready(function(){
 	});
 
 
+
 	
 });
 
@@ -54,6 +55,8 @@ function initial(){
 	$("div.home").show();
 	$("div.shoppingCart").hide();
 	$("div.history").hide();	
+	$(".admin").hide();
+	$("#userInfoBtn").hide();
 }
 
 function login(){
@@ -68,8 +71,23 @@ function login(){
 		url:"login.php",
 		data: {"username":username,"password":password},
 		method: "post",
+		dataType: "json",
 		success: function(response){
-			$("#loginModal p.error").show().html(response);
+			if(response.err == ""){
+				alert("Login Successful.");
+				$("#userInfoBtn").text(response.username);
+				$("#loginBtn").hide();
+				$("#registerBtn").hide();
+				$("#userInfoBtn").show();
+				$("#loginModal").css("display","none");
+				if(response.usertype == "admin"){
+					$(".admin").show();
+				}else{
+					$(".admin").hide();
+				}
+			}else{
+				$("#loginModal p.error").show().html(response.err);
+			}
 		},
 		error: function(){
 			alert("Error: cannot link login.php.");
