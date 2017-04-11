@@ -23,7 +23,7 @@
 		if($password == $row['password']){
 			$_SESSION['username'] = $username;
 			$_SESSION['id'] = $row['user_id'];
-			
+			session_write_close();
 			if(strcmp($row['user_name'],"admin")){
 				echo 'admin';
 			} 

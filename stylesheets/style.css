@@ -151,6 +151,7 @@ nav li {
 .modal p {
 	font-weight: bold;
 	font-size: 16px;
+	text-align: left;
 }
 .modal span {
 	display: inline-block;
@@ -159,6 +160,10 @@ nav li {
 }
 span.close {
 	text-align: right;
+}
+
+.error {
+	padding: 2px 5px;
 }
 
 

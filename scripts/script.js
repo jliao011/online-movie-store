@@ -6,6 +6,8 @@ $("document").ready(function(){
 // *************** event *************
 	$("#loginBtn").click(function(){
 		$("#loginModal").css("display","block");
+		$("#loginModal p.error").hide();
+		$("#loginModal input").val("");
 	});
 
 	$("#loginModal span.close").click(function(){
@@ -40,7 +42,9 @@ $("document").ready(function(){
 
 	});	
 
-
+	$("#loginModal button").click(function(){
+		login();
+	});
 
 
 	
@@ -50,4 +54,39 @@ function initial(){
 	$("div.home").show();
 	$("div.shoppingCart").hide();
 	$("div.history").hide();	
+}
+
+function login(){
+	var username = $("#loginModal input[name='username']").val();
+	var password = $("#loginModal input[name='password']").val();
+	if(username == ""){
+		$("#loginModal p.error").show().html("Please enter your user name or email address.");	
+	}else if(password == ""){
+		$("#loginModal p.error").show().html("Please enter your password.");
+	}else{
+		$.ajax({
+		url:"login.php",
+		data: {"username":username,"password":password},
+		method: "post",
+		success: function(response){
+			$("#loginModal p.error").show().html(response);
+		},
+		error: function(){
+			alert("Error: cannot link login.php.");
+		}
+	});		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	// $("#loginModal p.error").show().html(username+password);
 }
