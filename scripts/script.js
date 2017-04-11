@@ -8,7 +8,13 @@ $("document").ready(function(){
 		$("#loginModal").css("display","none");
 	});
 
+	$("#registerBtn").click(function(){
+		$("#registerModal").css("display","block");
+	});
 
+	$("#registerModal span.close").click(function(){
+		$("#registerModal").css("display","none");
+	});
 
 
 
