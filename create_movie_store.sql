@@ -53,3 +53,5 @@ CREATE TABLE SHOPPING_CART (
 
 INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("A Dog's Purpose","PG","2017",12.99);
 
+
+
