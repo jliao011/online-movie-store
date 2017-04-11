@@ -10,7 +10,8 @@ CREATE TABLE USER (
     user_name       varchar(40)     not null,
     password        varchar(80)     not null,
     CONSTRAINT pk_user PRIMARY KEY (user_id),
-    CONSTRAINT uk_user_email UNIQUE (user_email)
+    CONSTRAINT uk_user_email UNIQUE (user_email),
+    CONSTRAINT uk_user_name UNIQUE (user_name)
 );
 
 DROP TABLE IF EXISTS ADMIN;
