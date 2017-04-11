@@ -20,7 +20,7 @@
 		echo $err;
 	} 
 	else{
-		if($password == $row['password']){
+		if(sha1($password) == $row['password']){
 			$_SESSION['username'] = $username;
 			$_SESSION['id'] = $row['user_id'];
 			
