@@ -35,7 +35,7 @@ if ($film_add){
   if ($movie && $category && $rating && $year && $price){ 
     $conn = new mysqli('localhost', 'root', 'root', 'Movie_store');
     $query = 'INSERT INTO `Movie`(`movie_name`, `movie_rating`, `year`, `price`) VALUES ("'.$movie.'","'.$rating.'","'.$year.'", "'.$price.'")';
-
+    $result = $conn -> query($query);
     $movie_id = 'SELECT movie_id FROM `Movie` WHERE `movie_name`="'.$movie.'"';
     $query = 'INSERT INTO `Category`(`movie_id`, `category`) VALUES ("'.$movie_id.'","'.$category.'")';
     echo ' <script type="text/javascript">
