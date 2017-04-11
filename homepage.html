@@ -14,10 +14,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 </head>
 <body>
+<!-- ********* page header ******** -->
 	<header>
 		<h1>Movie Store</h1>
+		
 	</header>
-
 	<nav>
 		<ul class="menu">
 			<li class="">home</li>
@@ -26,15 +27,64 @@
 			<li class="">ccccc</li>
 			<li class="">ddddd</li>
 		</ul>
-		<ul class="login">
-			<li>login</li>
-			<li>user info</li>
-			<li>logout</li>
-		</ul>
+		<div class="login">
+			<div class="dropdown">
+				<span class="btn btn-danger" id="userInfoBtn">user info</span>
+				<div class="dropdown-content">
+					<a id="shoppingCartBtn">Shopping Cart</a>
+					<a id="purchaseHistoryBtn">Purchase History</a>
+					<a id="logoutBtn">Logout</a>
+				</div>
+			</div>
+			<span class="btn btn-danger" id="loginBtn">login</span>
+			<span class="btn btn-danger" id="registerBtn">register</span>
+		</div>
 	</nav>
 
+<!-- *********** main page ********** -->
 	<section class="main">
 		<h1>Main Section:</h1>
+		<!-- *********** page login ********** -->
+		<div class="modal" id="loginModal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Please Login</h2>
+				</div>
+				<div class="modal-body">
+					<p>username email password</p>
+				</div>
+			</div>
+		</div>
+		<!-- *********** page register ********** -->
+		<div class="modal" id="registerModal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Please Register</h2>
+				</div>
+				<div class="modal-body">
+					<p>username email password</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		
 	</section>
 
