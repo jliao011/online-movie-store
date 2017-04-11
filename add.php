@@ -6,21 +6,18 @@ echo '<br><h1>  Adding a Movie:  </h1> <h3> * Required Fields' ;
     echo '<form method="post" > <br>
       <b> Movie Name : </b> 
         <input type="text" name="movie_name" value=""> <br>  
-      <b> Movie rating : </b> 
-        <input type="text" name="movie_rating" value=""> <br>  
+      <b> Category : </b> 
+        <input type="text" name="category" value=""> <br>  
       <b> Year :  </b> 
         <input type="text" name="year" value=""> <br>  
       <b> Price : </b> 
         <input type="text" name="price" value=""> <br>
-      <b> Category : </b> <select name="category"> 
+      <b> Movie rating : </b> <select name="movie_rating"> 
         <option value=" " selected> ------------------- </option>
-        <option value=" A "> A </option>
-        <option value=" B "> B </option>
-        <option value=" C "> C </option>     
-        <option value=" D "> D </option>  
-        <option value=" E "> E </option>
-        <option value=" F "> F </option>
         <option value=" G "> G </option>
+        <option value=" PG "> PG </option>
+        <option value=" PG-13 "> PG-13 </option>     
+        <option value=" R "> R </option>
       <br> <br>   
         <input type="submit" class="btn btn-info" role="button" name="film_add" value="Add Movie"> 
    </form> '; 
