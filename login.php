@@ -3,7 +3,7 @@
 	$username = $password = "";	
 	$err = "Wrong username or password, please try again.";
 	
-	$conn = new mysqli('localhost', 'root', '', 'Movie_store');
+	$conn = new mysqli('localhost', 'root', 'root', 'Movie_store');
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$username = text_input($_POST['username']);
