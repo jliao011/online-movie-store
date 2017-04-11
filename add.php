@@ -1,8 +1,5 @@
 <?php
 session_start();
-//include("connect.php");
-//include("adminmenu.php");
-error_reporting(0);
 
 echo '<br><h1>  Adding a Movie:  </h1> <h3> * Required Fields' ;
     echo '<h4>';
