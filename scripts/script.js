@@ -4,61 +4,61 @@ $("document").ready(function(){
 
 
 // *************** event *************
-	$("#loginBtn").click(function(){
+	$("#loginBtn").click(function(){	// click login button
 		$("#loginModal").css("display","block");
 		$("#loginModal p.error").hide();
 		$("#loginModal input").val("");
 	});
 
-	$("#loginModal span.close").click(function(){
+	$("#loginModal span.close").click(function(){	// close login modal
 		$("#loginModal").css("display","none");
 	});
 
-	$("#registerBtn").click(function(){
+	$("#registerBtn").click(function(){	// click register button
 		$("#registerModal p.error").hide();
 		$("#registerModal").css("display","block");
 	});
 
-	$("#registerModal span.close").click(function(){
+	$("#registerModal span.close").click(function(){	// close register modal
 		$("#registerModal").css("display","none");
 	});
 
-	$("#shoppingCartBtn").click(function(){
+	$("#shoppingCartBtn").click(function(){	// click shopping chart button
 		$("div.home").hide();
 		$("div.history").hide();
 		$("div.shoppingCart").show();
 		$.ajax();
 
 	});
-	$("#purchaseHistoryBtn").click(function(){
+	$("#purchaseHistoryBtn").click(function(){	// click purchase history button
 		$("div.home").hide();
 		$("div.history").show();
 		$("div.shoppingCart").hide();
 		$.ajax();
 
 	});
-	$("#homeBtn").click(function(){
+	$("#homeBtn").click(function(){	// click home button
 		initial();
 		$.ajax();
 
 	});	
 
-	$("#loginModal button").click(function(){
+	$("#loginModal button").click(function(){	// login
 		login();
 	});
 
-	$("#registerModal button").click(function(){
+	$("#registerModal button").click(function(){	// register
 		register();
 	});
 
-	$("#addMovieBtn").click(function(){
+	$("#addMovieBtn").click(function(){	// admin add movie
 		$.ajax({
 			url:"addMovie.php",
 			success: function(response){
 				$("div.admin").html(response);
 			},
 			error: function(){
-				alert("error");
+				alert("Error: cannot link addMovie.php.");
 			}
 
 		});
