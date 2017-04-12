@@ -15,6 +15,7 @@ $("document").ready(function(){
 	});
 
 	$("#registerBtn").click(function(){
+		$("#registerModal p.error").hide();
 		$("#registerModal").css("display","block");
 	});
 
@@ -46,8 +47,22 @@ $("document").ready(function(){
 		login();
 	});
 
+	$("#registerModal button").click(function(){
+		register();
+	});
 
+	$("#addMovieBtn").click(function(){
+		$.ajax({
+			url:"addMovie.php",
+			success: function(response){
+				$("div.admin").html(response);
+			},
+			error: function(){
+				alert("error");
+			}
 
+		});
+	});
 	
 });
 
@@ -94,17 +109,22 @@ function login(){
 		}
 	});		
 	}
+}
 
+function register(){
+	var username = $("form [name='newusername']").val();
+	var password = $("form [name='newpassword']").val();
+	var email = $("form [name='email']").val();
 
-
-
-
-
-
-
-
-
-
-
-	// $("#loginModal p.error").show().html(username+password);
+	$.ajax({
+		url:"register.php",
+		method:"post",
+		data: {"username":username,"password":password,"email":email},
+		success: function(response){
+			$("#result").html(response);
+		},
+		error: function(){
+			alert("error");
+		}
+	});
 }
