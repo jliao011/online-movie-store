@@ -37,13 +37,14 @@ $(document).ready(function() {
         });
 
         $("#newemail").blur(function(){
-                var email=$(this).val();
-                if (email.length==0){
+          var email=$(this).val();
+          if (email.length==0){
             $("#emailInfo").text("This field can't be blank");
                 }
-       elae if(!valemail.test(email)){
+        else if(!valiemail.test(email)){
                $("#emailInfo").text("Invalid email address");
-       } 
+             }
+
         $("#emailInfo").show();
         });
 
