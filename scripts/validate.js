@@ -1,5 +1,16 @@
 $(document).ready(function() {
+        
+        $("#newusername").focus(function(){
+          $("#usernameInfo").hide();
+        });
 
+        $("#newpassword").focus(function(){
+          $("#passwordInfo").hide();
+        });
+
+        $("#newemail").focus(function(){
+          $("#emailInfo").hide();
+        });
 
         var num =/^[0-9]+$/i;
         var word =/^[a-zA-Z]+$/i;
@@ -59,6 +70,5 @@ $(document).ready(function() {
             alert("error");
         }
       });
-    }
 
 });
