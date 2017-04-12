@@ -36,8 +36,12 @@ if ($film_add){
     $conn = new mysqli('localhost', 'root', 'root', 'Movie_store');
     $query = 'INSERT INTO `Movie`(`movie_name`, `movie_rating`, `year`, `price`) VALUES ("'.$movie.'","'.$rating.'","'.$year.'", "'.$price.'")';
     $result = $conn -> query($query);
-    $movie_id = 'SELECT movie_id FROM `Movie` WHERE `movie_name`="'.$movie.'"';
+    echo 'Table movie inserted successfully'
+    $query = 'SELECT movie_id FROM `Movie` WHERE `movie_name`="'.$movie.'"';
+    $result = $conn -> query($query);
+    echo 'movie_id is successfully selected.'
     $query = 'INSERT INTO `Category`(`movie_id`, `category`) VALUES ("'.$movie_id.'","'.$category.'")';
+    $result = $conn -> query($query);
     echo ' <script type="text/javascript">
       alert("The movie has been successfully added.");
     </script> ';
