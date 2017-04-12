@@ -14,7 +14,7 @@ $(document).ready(function() {
 
         var num =/^[0-9]+$/i;
         var word =/^[a-zA-Z]+$/i;
-        var valemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var valiemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
         $("#newusername").blur(function(){
                 var username=$(this).val();
