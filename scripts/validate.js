@@ -3,9 +3,13 @@ $(document).ready(function() {
 
         var num =/^[0-9]+$/i;
         var word =/^[a-zA-Z]+$/i;
+        var valemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
         $("#newusername").blur(function(){
-        $("#usernameInfo").text("This field can't be blank");
+                var username=$(this).val();
+                if (username.length==0){
+            $("#usernameInfo").text("This field can't be blank");
+                }
         $("#usernameInfo").show();
         });
 
@@ -33,7 +37,13 @@ $(document).ready(function() {
         });
 
         $("#newemail").blur(function(){
-        $("#emailInfo").text("This field can't be blank");
+                var email=$(this).val();
+                if (email.length==0){
+            $("#emailInfo").text("This field can't be blank");
+                }
+       elae if(!valemail.test(email)){
+               $("#emailInfo").text("Invalid email address");
+       } 
         $("#emailInfo").show();
         });
 
