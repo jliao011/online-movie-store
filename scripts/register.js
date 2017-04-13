@@ -76,6 +76,8 @@ $("document").ready(function() {
 			password = $("#registerModal p.password input").val();
 			if (repassword != password){
 				$("#registerModal p.repassword .info").text("Password not match").addClass("alert-danger").removeClass("alert-success");
+			}else if(password == ""){
+				$("#registerModal p.repassword .info").text("");
 			}else{
 				$("#registerModal p.repassword .info").html("&#10003").addClass("alert-success").removeClass("alert-danger");
 				passwordFlag = true;
