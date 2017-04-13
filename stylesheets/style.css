@@ -103,12 +103,15 @@ nav li {
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 50%;
+    width: 60%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
+}
+#loginModal .modal-content {
+	width: 40%;
 }
 
 /* Add Animation */
@@ -164,6 +167,12 @@ span.close {
 
 .error {
 	padding: 2px 5px;
+}
+
+span.info {
+	margin-left: 10px;
+	width: initial;
+	padding: 0px 10px;
 }
 
 

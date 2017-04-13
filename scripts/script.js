@@ -47,9 +47,7 @@ $("document").ready(function(){
 		login();
 	});
 
-	$("#registerModal button").click(function(){	// register
-		register();
-	});
+
 
 	$("#addMovieBtn").click(function(){	// admin add movie
 		$.ajax({
@@ -111,20 +109,3 @@ function login(){
 	}
 }
 
-function register(){
-	var username = $("form [name='newusername']").val();
-	var password = $("form [name='newpassword']").val();
-	var email = $("form [name='email']").val();
-
-	$.ajax({
-		url:"register.php",
-		method:"post",
-		data: {"username":username,"password":password,"email":email},
-		success: function(response){
-			$("#result").html(response);
-		},
-		error: function(){
-			alert("error");
-		}
-	});
-}
