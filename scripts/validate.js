@@ -1,8 +1,8 @@
-$(document).ready(function() {
+$("document").ready(function() {
 	var num =/^[0-9]+$/i;
 	var word =/^[a-zA-Z]+$/i;
 	var valiemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
+	var email = "",username="",password="",repassword="";
 	var emailFlag = false, usernameFlag = false, passwordFlag = false;
 
 	$("#registerModal p.email input").on({
@@ -11,7 +11,7 @@ $(document).ready(function() {
 			$("#registerModal p.email .info").text("");
 		},
 		blur: function(){
-			var email=$(this).val();
+			email=$(this).val();
 			if (email.length==0){
 				$("#registerModal p.email .info").text("This field can't be blank").addClass("alert-danger").removeClass("alert-success");
 			}
@@ -30,7 +30,7 @@ $(document).ready(function() {
 			$("#registerModal p.username .info").text("");
 		},
 		blur: function(){
-			var username=$(this).val();
+			username=$(this).val();
 			if (username.length==0){
 				$("#registerModal p.username .info").text("This field can't be blank").addClass("alert-danger").removeClass("alert-success");
 			}else{
@@ -42,19 +42,19 @@ $(document).ready(function() {
 
 	$("#registerModal p.password input").on({
 		focus: function(){
-			var password=$(this).val();
+			password=$(this).val();
 			if(password==""){
 				$("#registerModal p.password .info").text("");				
 			}
 		},
 		blur: function(){
-			var password=$(this).val();
+			password=$(this).val();
 			if (password.length==0){
 				$("#registerModal p.password .info").text("This field can't be blank").addClass("alert-danger").removeClass("alert-success");
 			}		
 		},
 		keyup: function(){
-			var password=$(this).val();
+			password=$(this).val();
 		if (password.length<6 && password.length>=0) {
 			$("#registerModal p.password .info").text("Weak").addClass("alert-danger").removeClass("alert-warning alert-success");
 		}
@@ -72,8 +72,8 @@ $(document).ready(function() {
 			$("#registerModal p.repassword .info").text("");
 		},
 		blur: function(){
-			var repassword=$(this).val();
-			var password = $("#registerModal p.password input").val();
+			repassword=$(this).val();
+			password = $("#registerModal p.password input").val();
 			if (repassword != password){
 				$("#registerModal p.repassword .info").text("Password not match").addClass("alert-danger").removeClass("alert-success");
 			}else{
@@ -85,18 +85,28 @@ $(document).ready(function() {
 
 	$("#registerModal button").click(function(){
 		if(emailFlag && usernameFlag && passwordFlag){
-			$("#registerModal p.error").show();
-			$("#registerModal p.error").text("success");
+			$("#registerModal p.error").hide();	
 			$.ajax({
 				url:"register.php",
-				method: "post",
 				data: {"email":email,"username":username,"password":password},
+				method: "post",
+				dataType: "json",
 				success: function(response){
-					alert("success");
-					$("#registerModal p.error").html("response");
+					if(response.err == ""){
+						alert("Register and login successfully.");
+						$("#userInfoBtn").text(response.username);
+						$("#loginBtn").hide();
+						$("#registerBtn").hide();
+						$("#userInfoBtn").show();
+						$("#registerModal").css("display","none");							
+					}
+					else{
+						$("#registerModal p.error").show();
+						$("#registerModal p.error").text(response.err);	
+					}
 				},
 				error: function(){
-					alert("error");
+					alert("Error: cannot link register.php.");
 				}
 			});			
 		}else{

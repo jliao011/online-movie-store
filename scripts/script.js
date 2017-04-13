@@ -81,31 +81,31 @@ function login(){
 		$("#loginModal p.error").show().html("Please enter your password.");
 	}else{
 		$.ajax({
-		url:"login.php",
-		data: {"username":username,"password":password},
-		method: "post",
-		dataType: "json",
-		success: function(response){
-			if(response.err == ""){
-				alert("Login Successful.");
-				$("#userInfoBtn").text(response.username);
-				$("#loginBtn").hide();
-				$("#registerBtn").hide();
-				$("#userInfoBtn").show();
-				$("#loginModal").css("display","none");
-				if(response.usertype == "admin"){
-					$(".admin").show();
+			url:"login.php",
+			data: {"username":username,"password":password},
+			method: "post",
+			dataType: "json",
+			success: function(response){
+				if(response.err == ""){
+					alert("Login Successful.");
+					$("#userInfoBtn").text(response.username);
+					$("#loginBtn").hide();
+					$("#registerBtn").hide();
+					$("#userInfoBtn").show();
+					$("#loginModal").css("display","none");
+					if(response.usertype == "admin"){
+						$(".admin").show();
+					}else{
+						$(".admin").hide();
+					}
 				}else{
-					$(".admin").hide();
+					$("#loginModal p.error").show().html(response.err);
 				}
-			}else{
-				$("#loginModal p.error").show().html(response.err);
+			},
+			error: function(){
+				alert("Error: cannot link login.php.");
 			}
-		},
-		error: function(){
-			alert("Error: cannot link login.php.");
-		}
-	});		
+		});		
 	}
 }
 
