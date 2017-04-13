@@ -5,6 +5,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="/scripts/script.js" type="text/javascript"></script>
 	<script src="/scripts/register.js" type="text/javascript"></script>
+	<script src="/scripts/addMovie.js" type="text/javascript"></script>
+
 
 
 	<link href="/images/favicon.jpg" type="image/jpg" rel="shortcut icon"> 
@@ -96,8 +98,48 @@
 
 		</div>
 
-		<div class="admin">
-		<h2>Admin Div:</h2>
+		<div class="admin addMovie panel panel-info">
+			<div class="panel-heading">
+				<h1>  Adding a Movie:  </h1> 
+				<h3> * Required Fields </h3>				
+			</div>
+			<div class="panel-body">
+				<p class="error alert-danger">error:</p>
+				<div class="input">
+					<p><span>Movie Name : </span><input type="text" name="movie_name" value=""></p>
+					<p><span>Release Year :  </span><input type="text" name="year" value=""></p>
+					<p><span>Price : </span><input type="text" name="price" value=""></p>
+					<p><span>Rating :  </span>
+						<select name="movie_rating"> 
+							<option value="" selected> ------------------- </option>
+							<option value="G"> G </option>
+							<option value="PG"> PG </option>
+							<option value="PG-13"> PG-13 </option>     
+							<option value="R"> R </option>
+						</select>
+					</p>
+					<p><span>Category : </span><span></span><br/><span></span>
+						<select multiple name="category">
+							<option value = '1'>1</option>
+							<option value = '2'>2</option>
+							<option value = '3'>3</option>
+							<option value = '4'>4</option>
+							<option value = '5'>5</option>
+							<option value = '6'>6</option>
+							<option value = '7'>7</option>
+						</select>
+					</p>
+					<p><span>Upload Image :</span><span></span><input type="file" name="image"></p>
+					<p><span>Upload Synopsis :</span><span></span><input type="file" name="synopsis"></p>
+
+					
+					<br/>
+					<button class="btn btn-info">Submit</button>
+				</div>
+				<div class="view">
+					asdf
+				</div>
+			</div>
 
 		</div>
 

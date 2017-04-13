@@ -40,7 +40,9 @@ $("document").ready(function(){
 
 	});
 	$("#homeBtn").click(function(){	// click home button
-		initial();
+		$("div.home").show();
+		$("div.shoppingCart").hide();
+		$("div.history").hide();	
 		$.ajax();
 
 	});	
@@ -52,17 +54,13 @@ $("document").ready(function(){
 
 
 	$("#addMovieBtn").click(function(){	// admin add movie
-		$.ajax({
-			url:"addMovie.php",
-			success: function(response){
-				$("div.admin").html(response);
-			},
-			error: function(){
-				alert("Error: cannot link addMovie.php.");
-			}
-
-		});
+		$("div.home").hide();
+		$("div.shoppingCart").hide();
+		$("div.history").hide();	
+		$("div.addMovie").show();	
 	});
+
+	$(".admin").show();
 	
 });
 

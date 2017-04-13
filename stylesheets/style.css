@@ -175,7 +175,32 @@ span.info {
 	padding: 0px 10px;
 }
 
+/******************* add movie div ******************/
+div.addMovie span {
+	display: inline-block;
+	width: 150px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;	
+}
+div.addMovie div.input {
+	display: inline-block;
+	border: 1px solid black;
+	padding: 5px 20px;
+	margin: 5px 20px;
+	text-align: center;
+}
+div.addMovie div.view {
+	display: inline-block;
+	border: 1px solid black;
+	padding: 5px 20px;
+	margin: 5px 20px;
 
+}
+
+div.input select {
+	width: 150px;
+}
 
 
 
