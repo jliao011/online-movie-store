@@ -16,6 +16,8 @@ $("document").ready(function(){
 
 	$("#registerBtn").click(function(){	// click register button
 		$("#registerModal p.error").hide();
+		$("#registerModal input").val("");
+		$("#registerModal span.info").text("");
 		$("#registerModal").css("display","block");
 	});
 
