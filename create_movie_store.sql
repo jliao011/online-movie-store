@@ -52,6 +52,36 @@ CREATE TABLE SHOPPING_CART (
 
 
 INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("A Dog's Purpose","PG","2017",12.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("1","Comedy");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("1","Fantesy");
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("Beauty and Beast","PG","2017",20.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("2","Fantesy");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("2","Adventure");
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("Guardians Of The Galaxy Vol. 2","PG-13","2017",14.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("3", "Action");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("3","Fantesy");
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("Ghost in the Shell","PG-13","2017",20.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("4", "Thriller");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("4","Crime");
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("Rogue One","PG-13","2016",14.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("5", "Adventure");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("5","Action");
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("Fantastic Beasts and Where to Find Them","PG-13","2016",15.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("6", "Adventure");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("6","Fantesy");
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("Kong: Skull Island","PG-13","2017",20.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("7", "Adventure");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("7","Action");
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("Going in Style","PG-13","2017",20.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("8", "Comedy");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("8","Crime");
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("Moana","PG-13","2017",20.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("9", "Animated");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("9","Adventure");
+INSERT INTO MOVIE (movie_name,movie_rating,year,price) VALUES ("Mine","PG-13","2016",4.99);
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("10", "Thriller");
+INSERT INTO CATEGORY(movie_id,CATEGORY) VALUES ("10","Action");
+
 
 
 
