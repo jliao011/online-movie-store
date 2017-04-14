@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Ajax Image Upload Using PHP and jQuery</title>
+<link rel="stylesheet" href="style.css" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="test.js"></script>
+</head>
+<body>
+	<div class="main">
+		<h1>Ajax Image Upload</h1><br/>
+		<hr>
+
+		<p class="error alert-danger">error:</p>
+		<form class="addMovie" action="" method="post" enctype="multipart/form-data">
+			<p><span>Movie Name : </span><input type="text" name="movie_name" value="" required></p>
+			<p><span>Release Year :  </span><input type="text" name="year" value="" required></p>
+			<p><span>Price : </span><input type="text" name="price" value="" required></p>
+			<p><span>Rating :  </span>
+				<select name="rating" required> 
+					<option value="" selected> ------------------- </option>
+					<option value="G"> G </option>
+					<option value="PG"> PG </option>
+					<option value="PG-13"> PG-13 </option>     
+					<option value="R"> R </option>
+				</select>
+			</p>
+			<p><span>Category : </span><span></span><br/><span></span>
+				<select multiple name="category[]" required>
+					<option value = '1'>1</option>
+					<option value = '2'>2</option>
+					<option value = '3'>3</option>
+					<option value = '4'>4</option>
+					<option value = '5'>5</option>
+					<option value = '6'>6</option>
+					<option value = '7'>7</option>
+				</select>
+			</p>
+			<p><span>Upload Image :</span><span></span><input type="file" name="image" required /></p>
+			<p><span>Upload Synopsis :</span><span></span><input type="file" name="synopsis" required /></p>
+			<input type="submit" value="Upload" class="submit" />
+
+		</form>
+	</div>
+
+</body>
+</html>

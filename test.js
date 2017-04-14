@@ -1,16 +1,16 @@
 
 $(document).ready(function () {
-	$("div.addMovie p.error").hide();
+
 	$("form.addMovie").on('submit',(function(e) {
 		var err = "";
 		var yearFlag = false, priceFlag = false, imageFlag = false,synopsisFlag = false;
 		$("p.error").html(err);
 		e.preventDefault();
-		var movie_name = $("form.addMovie input[name='movie_name']").val();
 		var year = $("form.addMovie input[name='year']").val();
 		var price = $("form.addMovie input[name='price']").val();
 		var image = $("form.addMovie input[name='image']").val();
 		var synopsis = $("form.addMovie input[name='synopsis']").val();
+
 		if(!price.match(/^[0-9]+\.[0-9]{2}$/)){
 			err += "Invalid price input, should have 2 decimal places.<br/>";
 			priceFlag = false;
@@ -41,15 +41,10 @@ $(document).ready(function () {
 		}else{
 			synopsisFlag = true;
 		}
-		if(err != ""){
-			$("div.addMovie p.error").show();
-		}else{
-			$("div.addMovie p.error").hide();
-		}
 
 		if(yearFlag && priceFlag && imageFlag && synopsisFlag){
 			$.ajax({
-				url: "addMovie.php", // Url to which the request is send
+				url: "test.php", // Url to which the request is send
 				type: "POST",             // Type of request to be send, called as method
 				data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
 				contentType: false,       // The content type used when sending data to the server.
@@ -57,15 +52,8 @@ $(document).ready(function () {
 				processData:false,        // To send DOMDocument or non processed data file it is set to false
 				success: function(data)   // A function to be called if request succeeds
 				{
-					if(data == ""){
-						$("div.addMovie p.error").hide();
-						alert("Add movie "+ movie_name +" successful!");
-					}else{
-						$("div.addMovie p.error").show();
-						$("div.addMovie p.error").html(data);
-					}
-				
-				}
+				$("p.error").html(data);
+			}
 			});			
 		}
 

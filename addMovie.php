@@ -1,56 +1,50 @@
 <?php
-session_start();
+	session_start();
+	$err = "";
 
-echo '<br><h1>  Adding a Movie:  </h1> <h3> * Required Fields' ;
-    echo '<h4>';
-    echo '<form method="post" > <br>
-      <b> Movie Name : </b> 
-        <input type="text" name="movie_name" value=""> <br>  
-      <b> Category : </b> 
-        <input type="text" name="category" value=""> <br>  
-      <b> Year :  </b> 
-        <input type="text" name="year" value=""> <br>  
-      <b> Price : </b> 
-        <input type="text" name="price" value=""> <br>
-      <b> Movie rating : </b> <select name="movie_rating"> 
-        <option value=" " selected> ------------------- </option>
-        <option value=" G "> G </option>
-        <option value=" PG "> PG </option>
-        <option value=" PG-13 "> PG-13 </option>     
-        <option value=" R "> R </option>
-      <br> <br>   
-        <input type="submit" class="btn btn-info" role="button" name="film_add" value="Add Movie"> 
-   </form> '; 
+	$conn = new mysqli('localhost', 'root', 'root', 'Movie_store');
+	if (mysqli_connect_errno()){
+		$err .= "Failed to connect to MySQL: ".mysqli_connect_error()."<br/>";
+	}
+	$movie_name = $_POST['movie_name'];
+	$rating = $_POST['rating'];
+	$year = $_POST['year'];
+	$price = $_POST['price'];
+	$query = 'INSERT INTO `Movie`(`movie_name`, `movie_rating`, `year`, `price`) VALUES ("'.$movie_name.'","'.$rating.'","'.$year.'", '.$price.');';
+	if (!mysqli_query($conn,$query)) {
+		$err .= "Error: ".$query.mysqli_error($conn)."<br/>";
+	}else{ // insert movie row successfully
+		$query = 'SELECT movie_id FROM `Movie` WHERE `movie_name`="'.$movie_name.'";';
+		$result = $conn -> query($query);
+		$row = mysqli_fetch_array($result);
+		$movie_id = $row['movie_id'];
+		foreach ($_POST["category"] as $category) {
+			$query = 'INSERT INTO `Category`(`movie_id`, `category`) VALUES ('.$movie_id.',"'.$category.'")';
+			if (!mysqli_query($conn,$query)) {
+				$err .= "Error: ".$query.mysqli_error($conn)."<br/>";
+			}		
+		}	
+		// upload image
+		if ($_FILES["image"]["error"] > 0){
+			$err .= "Return Code: " . $_FILES["image"]["error"] . "<br/>";
+		}else{
+			$sourcePath = $_FILES['image']['tmp_name']; // Storing source path of the file in a variable
+			$_FILES["image"]["name"] = $movie_id.".jpg";
+			$targetPath = "inventory/images/".$_FILES['image']['name']; // Target path where file is to be stored
+			move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
+		}
+		// upload synopsis
+		if ($_FILES["synopsis"]["error"] > 0){
+			$err .= "Return Code: " . $_FILES["synopsis"]["error"] . "<br/>";
+		}else{
+			$sourcePath = $_FILES['synopsis']['tmp_name']; // Storing source path of the file in a variable
+			$_FILES["synopsis"]["name"] = $movie_id.".txt";
+			$targetPath = "inventory/synopsis/".$_FILES['synopsis']['name']; // Target path where file is to be stored
+			move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
+		}
 
-$film_add = ($_POST['film_add']);
-$movie = ($_POST['movie_name']);
-$category = ($_POST['category']);
-$rating = ($_POST['movie_rating']);
-$year = ($_POST['year']);
-$price = ($_POST['price']);     
+	}
+	echo $err;
 
-echo "</h4>";
-
-if ($film_add){
-  if ($movie && $category && $rating && $year && $price){ 
-    $conn = new mysqli('localhost', 'root', 'root', 'Movie_store');
-    $query = 'INSERT INTO `Movie`(`movie_name`, `movie_rating`, `year`, `price`) VALUES ("'.$movie.'","'.$rating.'","'.$year.'", "'.$price.'")';
-    $result = $conn -> query($query);
-    echo 'Table movie inserted successfully';
-    $query = 'SELECT movie_id FROM `Movie` WHERE `movie_name`="'.$movie.'"';
-    $result = $conn -> query($query);
-    echo 'movie_id is successfully selected.';
-    $query = 'INSERT INTO `Category`(`movie_id`, `category`) VALUES ("'.$movie_id.'","'.$category.'")';
-    $result = $conn -> query($query);
-    echo ' <script type="text/javascript">
-      alert("The movie has been successfully added.");
-    </script> ';
-  }
-  else{
-    echo ' <script type="text/javascript">
-      alert("Fail to add new movie. Please check all required fields are filled.");
-    </script> ';  
-  }
-}
 
 ?>

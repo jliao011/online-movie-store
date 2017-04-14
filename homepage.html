@@ -104,13 +104,14 @@
 				<h3> * Required Fields </h3>				
 			</div>
 			<div class="panel-body">
-				<p class="error alert-danger">error:</p>
+				<p class="error alert-danger"></p>
 				<div class="input">
-					<p><span>Movie Name : </span><input type="text" name="movie_name" value=""></p>
-					<p><span>Release Year :  </span><input type="text" name="year" value=""></p>
-					<p><span>Price : </span><input type="text" name="price" value=""></p>
+				<form class="addMovie" action="" method="post" enctype="multipart/form-data">
+					<p><span>Movie Name : </span><input type="text" name="movie_name" value="" required></p>
+					<p><span>Release Year :  </span><input type="text" name="year" value="" required></p>
+					<p><span>Price : </span><input type="text" name="price" value="" required></p>
 					<p><span>Rating :  </span>
-						<select name="movie_rating"> 
+						<select name="rating" required> 
 							<option value="" selected> ------------------- </option>
 							<option value="G"> G </option>
 							<option value="PG"> PG </option>
@@ -119,7 +120,7 @@
 						</select>
 					</p>
 					<p><span>Category : </span><span></span><br/><span></span>
-						<select multiple name="category">
+						<select multiple name="category[]" required>
 							<option value = '1'>1</option>
 							<option value = '2'>2</option>
 							<option value = '3'>3</option>
@@ -129,12 +130,11 @@
 							<option value = '7'>7</option>
 						</select>
 					</p>
-					<p><span>Upload Image :</span><span></span><input type="file" name="image"></p>
-					<p><span>Upload Synopsis :</span><span></span><input type="file" name="synopsis"></p>
+					<p><span>Upload Image :</span><span></span><input type="file" name="image" required /></p>
+					<p><span>Upload Synopsis :</span><span></span><input type="file" name="synopsis" required /></p>
+					<input type="submit" value="Upload" class="submit" />
 
-					
-					<br/>
-					<button class="btn btn-info">Submit</button>
+				</form>
 				</div>
 				<div class="view">
 					asdf
