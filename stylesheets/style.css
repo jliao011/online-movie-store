@@ -8,22 +8,31 @@ header {
 	top: 0px; left: 5px; right: 5px;
 	height: 150px;
 	border: 1px solid black;
-	background-color: white;
+	background-image: url("/images/header.jpg");
 	padding: 5px 20px;
+
 }
 nav {
 	position: fixed;
-	top: 100px; left: 20px; right: 120px;
-	border: 1px solid black;
-	padding: 0px;
+	top: 105px; left: 20px; right: 20px;
+	height: 40px;
+	border: 0px solid black;
+	border-radius: 100px;
+	padding: 3px 5px;
+	background-color: rgba(1,1,1,0.3);
+
 }
 nav ul {
 	display: inline-block;
-	border: 1px solid black;
+	border: 0px solid black;
 	padding: 0px;
+	margin: 0px;
 }
 nav div.login {
 	float: right;
+	padding: 0px;
+	margin: 0px;
+
 }
 nav li {
 	background-color: white;
@@ -35,11 +44,16 @@ nav li {
 	margin: 0px;
 	font-size: large;
 }
+
+.btn{
+	margin: 0px 2px;
+}
+
 /************ drop btn ********* */        
 .btn {
 	width: 100px;
-	margin-bottom: 5px;
 	font-weight: bolder;
+	border-radius: 50px;
 }
 .dropbtn {
     background-color: #4CAF50;
@@ -58,6 +72,7 @@ nav li {
 .dropdown-content {
     display: none;
     position: absolute;
+    right: 0px;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
