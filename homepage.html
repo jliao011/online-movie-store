@@ -63,10 +63,10 @@
 					<span class="close">&times;</span>
 					<h2>Please Login</h2>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body form-inline">
 					<p class="error alert-danger"></p>
-					<p><span>user name or email:</span><input type="text" name="username" value=""></p >
-					<p><span>password:</span><input type="password" name="password" value=""></p >
+					<p><span>user name or email:</span><input class="form-control" type="text" name="username" value=""></p >
+					<p><span>password:</span><input class="form-control" type="password" name="password" value=""></p >
 					<br/>
 					<button class="btn btn-danger">Login</button>
 				</div>
@@ -79,12 +79,12 @@
 					<span class="close">&times;</span>
 					<h2>Please Register</h2>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body form-inline">
 					<p class="error alert-danger"></p>
-					<p class="email"><span>*Email:</span><input type="text" name="email"><span class="info"></span></p>
-					<p class="username"><span>*Username:</span><input type="text" name="username"><span class="info"></span></p>					
-					<p class="password"><span>*Password:</span><input type="password" name="password"><span class="info"></span></p>
-					<p class="repassword"><span>*Re-enter Password:</span><input type="password" name="repassword"><span class="info"></span></p>
+					<p class="email"><span>*Email:</span><input class="form-control" type="text" name="email"><span class="info"></span></p>
+					<p class="username"><span>*Username:</span><input class="form-control" type="text" name="username"><span class="info"></span></p>					
+					<p class="password"><span>*Password:</span><input class="form-control" type="password" name="password"><span class="info"></span></p>
+					<p class="repassword"><span>*Re-enter Password:</span><input class="form-control" type="password" name="repassword"><span class="info"></span></p>
 					<br/>
 					<button class="btn btn-danger">Register</button>
 				</div>
@@ -102,14 +102,21 @@
 		</div>
 
 
-		<!-- *********** home page ********** -->
+		<!-- *********** home page for listing movies ********** -->
 		<div class="home">
 			<h2>Home Page:</h2>
+			<p class="error alert-danger">Error: </p>
+			<div id="listing">
+				listing:
+			</div>
+			<div id="paging">
+				paging: 
+			</div>
 
 
 		</div>
 		<!-- *********** filter movie module ********** -->
-		<div id="filter-panel" class=" filter-panel">
+		<div id="filter-panel" class="collapse filter-panel">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<div class="form-inline">
@@ -118,6 +125,7 @@
 						<span style="width: 50px"></span>
 						<span>Search by Category:</span>
 						<select id="search-category" class="form-control">
+							<option value = ''> </option>
 							<option value = 'Science fiction'>Science fiction</option>
 							<option value = 'Fantasy'>Fantasy</option>
 							<option value = 'Crime'>Crime</option>
@@ -125,7 +133,7 @@
 							<option value = 'Thriller'>Thriller</option>
 							<option value = 'Comedy'>Comedy</option>
 							<option value = 'Animated'>Animated</option>
-							<option value = 'Fantasy'>Adventure</option>
+							<option value = 'Adventure'>Adventure</option>
 						</select>                                
 						<span style="width: 30px"></span>
 						<span class="btn btn-default material-icons">search</span>
@@ -134,11 +142,8 @@
 			</div>
 		</div> 
 
-		<!-- *********** movie list module *************** -->
-		<div class="listMovie">
-			
 
-		</div>
+
 
 		<!-- **********  add movie module  ********** -->
 		<div class="admin addMovie panel panel-info">
@@ -148,14 +153,14 @@
 			</div>
 			<div class="panel-body">
 				<p class="error alert-danger"></p>
-				<div class="input">
+				<div class="input form-inline">
 				<form class="addMovie" action="" method="post" enctype="multipart/form-data">
-					<p><span>Movie Name : </span><input type="text" name="movie_name" value="" required></p>
-					<p><span>Release Year :  </span><input type="text" name="year" value="" required></p>
-					<p><span>Price : </span><input type="text" name="price" value="" required></p>
+					<p><span>Movie Name : </span><input class="form-control" type="text" name="movie_name" value="" required></p>
+					<p><span>Release Year :  </span><input class="form-control" type="text" name="year" value="" required></p>
+					<p><span>Price : </span><input class="form-control" type="text" name="price" value="" required></p>
 					<p><span>Rating :  </span>
-						<select name="rating" required> 
-							<option value="" selected> ------------------- </option>
+						<select name="rating" class="form-control" style="width: 150px" required> 
+							<option value="" selected>                </option>
 							<option value="G"> G </option>
 							<option value="PG"> PG </option>
 							<option value="PG-13"> PG-13 </option>     
@@ -163,7 +168,7 @@
 						</select>
 					</p>
 					<p><span>Category : </span><span></span><br/><span></span>
-						<select multiple name="category[]" required>
+						<select multiple name="category[]" class="form-control" style="width: 150px;height: 100px" required>
 							<option value = 'Science fiction'>Science fiction</option>
 							<option value = 'Fantasy'>Fantasy</option>
 							<option value = 'Crime'>Crime</option>
@@ -171,11 +176,11 @@
 							<option value = 'Thriller'>Thriller</option>
 							<option value = 'Comedy'>Comedy</option>
 							<option value = 'Animated'>Animated</option>
-							<option value = 'Fantasy'>Adventure</option>
+							<option value = 'Adventure'>Adventure</option>
 						</select>
 					</p>
-					<p><span>Upload Image :</span><span></span><input type="file" name="image" required /></p>
-					<p><span>Upload Synopsis :</span><span></span><input type="file" name="synopsis" required /></p>
+					<p><span>Upload Image :</span><span></span><input class="form-control" type="file" name="image" required /></p>
+					<p><span>Upload Synopsis :</span><span></span><input class="form-control" type="file" name="synopsis" required /></p>
 					<input type="submit" value="Upload" class="submit btn btn-info" />
 
 				</form>

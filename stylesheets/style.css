@@ -204,9 +204,10 @@ div.addMovie span {
 div.addMovie div.input {
 	display: inline-block;
 	border: 1px solid black;
-	padding: 5px 20px;
+	padding: 5px 30px;
 	margin: 5px 20px;
-	text-align: center;
+
+	width: 500px;
 }
 div.addMovie div.view {
 	display: inline-block;
@@ -226,6 +227,7 @@ div.input select {
 	font-weight: bold;
 	font-size: 16px;
 }
+
 
 
 
