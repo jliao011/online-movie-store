@@ -48,12 +48,15 @@ nav li {
 .btn{
 	margin: 0px 2px;
 }
-
+.material-icons.btn{
+	width: 40px;
+}
 /************ drop btn ********* */        
-.btn {
+nav .btn {
 	width: 100px;
 	font-weight: bolder;
 	border-radius: 50px;
+	opacity: 0.8;
 }
 .dropbtn {
     background-color: #4CAF50;
@@ -216,7 +219,13 @@ div.addMovie div.view {
 div.input select {
 	width: 150px;
 }
-
+/********** filter div ************/
+#filter-panel span {
+	display: inline-block;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+}
 
 
 

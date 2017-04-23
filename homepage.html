@@ -3,13 +3,17 @@
 <head>
 	<title>Movie Store</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="/scripts/bootstrap.js" type="text/javascript"></script>
 	<script src="/scripts/script.js" type="text/javascript"></script>
 	<script src="/scripts/register.js" type="text/javascript"></script>
 	<script src="/scripts/addMovie.js" type="text/javascript"></script>
+	<script src="/scripts/filterMovie.js" type="text/javascript"></script>
+
 
 
 
 	<link href="/images/favicon.jpg" type="image/jpg" rel="shortcut icon"> 
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 	<meta charset="utf-8">
@@ -28,8 +32,11 @@
 		<ul class="menu">
 			<li id="homeBtn" class="btn btn-danger">home</li>
 			<li id="addMovieBtn" class="admin btn btn-danger">Add Movies</li>
+			
 		</ul>
 		<div class="login">
+			<span class="btn btn-danger material-icons" data-toggle="collapse" data-target="#filter-panel">search</span>
+			<span></span>
 			<div class="dropdown">
 				<span class="btn btn-danger" id="userInfoBtn">user info</span>
 				<span></span>
@@ -42,6 +49,8 @@
 			<span class="btn btn-danger" id="loginBtn">login</span>
 			<span class="btn btn-danger" id="registerBtn">register</span>
 		</div>
+
+
 	</nav>
 
 <!-- *********** main page ********** -->
@@ -96,18 +105,42 @@
 		<!-- *********** home page ********** -->
 		<div class="home">
 			<h2>Home Page:</h2>
-			<div class="filter">
-				<form class="search" action="" method="post" enctype="multipart/form-data">
-				</form>
-				<form class="filter" action="" method="post" enctype="multipart/form-data">
-				</form>
-
-			</div>
-
 
 
 		</div>
+		<!-- *********** filter movie module ********** -->
+		<div id="filter-panel" class=" filter-panel">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="form-inline">
+						<span>Search by Movie Name:</span>
+						<input id="search-name" type="text" class="form-control input-m" style="width: 300px">
+						<span style="width: 50px"></span>
+						<span>Search by Category:</span>
+						<select id="search-category" class="form-control">
+							<option value = 'Science fiction'>Science fiction</option>
+							<option value = 'Fantasy'>Fantasy</option>
+							<option value = 'Crime'>Crime</option>
+							<option value = 'Action'>Action</option>
+							<option value = 'Thriller'>Thriller</option>
+							<option value = 'Comedy'>Comedy</option>
+							<option value = 'Animated'>Animated</option>
+							<option value = 'Fantasy'>Adventure</option>
+						</select>                                
+						<span style="width: 30px"></span>
+						<span class="btn btn-default material-icons">search</span>
+					</div>
+				</div>
+			</div>
+		</div> 
 
+		<!-- *********** movie list module *************** -->
+		<div class="listMovie">
+			
+
+		</div>
+
+		<!-- **********  add movie module  ********** -->
 		<div class="admin addMovie panel panel-info">
 			<div class="panel-heading">
 				<h1>  Adding a Movie:  </h1> 
