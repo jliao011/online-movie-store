@@ -66,13 +66,13 @@ $("document").ready(function() {
 									var body = $("<div></div>").addClass("panel-body");
 									var foot = $("<div></div>").addClass("panel-foot");
 									var showprice = $("<span></span>").addClass("price").append("$").append(price);
+									var catdiv = $("<div></div>").addClass("category");
 									head.append(name);
 									var image = $("<img>");
 									image.attr('src',img);
 									body.append(image);
-									$(element.category).each(function(i,cat){
-										foot.append(cat).append(" ");
-									});
+							
+									foot.append(element.category[0]);
 
 									foot.append(showprice);
 									display.append(head).append(body).append(foot);
