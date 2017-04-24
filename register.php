@@ -18,6 +18,13 @@
 		$query = 'INSERT INTO `user`(`user_email`, `user_name`, `password`) VALUES ("'.$email.'","'.$username.'","'.$sha1pwd.'");';
 		$result = $conn -> query($query);
 		$_SESSION['username'] = $username;
+
+		$query = "SELECT * FROM USER WHERE user_name = '".$username."';";
+		$result = mysqli_query($conn,$query);
+		$user = mysqli_fetch_array($result);
+		$_SESSION['id'] = $user['user_id'];
+		session_write_close();
+
 	}
 	else{
 		$err .= "Username or Email already exists.";

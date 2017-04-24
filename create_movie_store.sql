@@ -45,6 +45,7 @@ CREATE TABLE SHOPPING_CART (
     user_id     int     not null,
     movie_id    int     not null,
     check_out   boolean not null,
+    date        date    not null,
     CONSTRAINT pk_shopping_cart PRIMARY KEY (user_id, movie_id),
     CONSTRAINT fk_shopping_cart_user FOREIGN KEY (user_id) REFERENCES USER(user_id),
     CONSTRAINT fk_shopping_cart_movie FOREIGN KEY (movie_id) REFERENCES MOVIE(movie_id)

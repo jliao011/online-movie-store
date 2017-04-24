@@ -105,7 +105,7 @@ nav .btn {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 2; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -292,6 +292,86 @@ article.movie .price {
 	border: 1px solid black;
 	margin: 5px;
 	padding: 0px 20px;
+}
+/***************** movie detail *************/
+#detail .modal-content {
+	width: 1000px;
+	top:  10px;
+	text-align: center;
+	padding: 0px;
+}
+#detail .modal-body{
+	padding: 0px;
+	padding-top: 5px;
+	height: 560px;
+}
+
+#movieDetail {
+
+	width: 590px;
+	height: 550px;
+	border: 1px solid black;
+	display: inline-block;
+	text-align: left;
+	padding-left: 3px;
+
+}
+#movieDetail img{
+	width: 320px;
+	height: 480px;
+	margin-bottom: 10px;
+}
+
+
+#movieDetail div.info {
+	width: 260px;
+	border: 1px solid black;
+	height: 480px;
+	display: inline-block;
+	float: right;
+	text-align:left;
+	padding: 5px;
+}
+
+#movieDetail span {
+	display: inline-block;
+	width: 90px;
+	text-align: left;
+	font-weight: bolder;
+	font-size: 16px;
+	padding-left: 5px;
+}
+#movieDetail p {
+	font-weight: normal;
+	font-size: 16px;
+	display: inline-block;s
+
+}
+
+div.synopsis {
+	padding: 10px;
+	overflow: scroll;
+	max-height: 350px;
+}
+
+#movieDetail button {
+	margin: 0px 40px;
+	font-size: 25px;
+	float: right;
+}
+#movieDetail .price {
+	color: red;
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+
+#updateMovie {
+	width: 400px;
+	height: 550px;
+	border: 1px solid black;
+	display: inline-block;
+	float: right;
 }
 
 

@@ -17,10 +17,7 @@ $("document").ready(function() {
 
 
 
-	$("body").on("click","article.movie",function(){
-		var id = $(this).attr('id');
-		alert(id);
-	});
+
 
 
 	$("#filter-panel span.btn").on("click",function(){
@@ -70,7 +67,9 @@ $("document").ready(function() {
 									var foot = $("<div></div>").addClass("panel-foot");
 									var showprice = $("<span></span>").addClass("price").append("$").append(price);
 									head.append(name);
-									body.append(img);
+									var image = $("<img>");
+									image.attr('src',img);
+									body.append(image);
 									$(element.category).each(function(i,cat){
 										foot.append(cat).append(" ");
 									});

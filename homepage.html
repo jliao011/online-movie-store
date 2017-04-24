@@ -8,6 +8,8 @@
 	<script src="/scripts/register.js" type="text/javascript"></script>
 	<script src="/scripts/addMovie.js" type="text/javascript"></script>
 	<script src="/scripts/filterMovie.js" type="text/javascript"></script>
+	<script src="/scripts/detailMovie.js" type="text/javascript"></script>
+
 
 
 
@@ -132,34 +134,81 @@
 		<!-- *********** home page for listing movies ********** -->
 		<div class="home">
 			<h2>Home Page:</h2>
-			<p class="error alert-danger">Error: </p>
+			<p class="error alert-danger">Error: </p><hr/>
 			<div id="listing">
 				listing:<br/>
-<!-- 
-				<article class="movie panel panel-default" >
-					<div class="panel-heading">
-						<p>Fantastic Beasts and Where to Find Them</p>
-					</div>
-					<div class="panel-body">
-					<img src="/inventory/images/5.jpg" alt="Movie" />
-					</div>
-					<div class="panel-foot">
-						<p>Fantastic Beasts and Where to Find Them</p>
-					</div>
-				</article>	 -->
-
-
 			</div>
 
 			<div id="paging">
 				paging: 
-				<span class="btn btn-danger">aaa</span>
+			
 			</div>
 
 
 		</div>
+	<!-- *********** details and admin update ********** -->
+		<div class="modal" id="detail">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h2>Please Login</h2>
+				</div>
+				<div class="modal-body">
+					<div id="movieDetail">
+						<img src="inventory/images/1.jpg" alt="image">
+						<div class="info">
+							<span>Year: </span><p class="year"></p><br/>
+							<span>Rating: </span><p class="rating"></p><br/>
+							<span>Category: </span><p class="category"></p><br/>
+							<span>Synopsis: </span><br/><div class="synopsis"><p class="synopsis"></p></div>
+						</div>	
+						<span class="price">Price: </span><p class="price">$12.2</p>
+						<button class="btn btn-danger" name="addCart">Add to Cart</button>
+						
+
+					</div>
+					<div class="admin" id="updateMovie">
+						<div class="input form-inline">
+						<form class="addMovie" action="" method="post" enctype="multipart/form-data">
+							<p><span>Movie Name : </span><input class="form-control" type="text" name="movie_name" value="" required></p>
+							<p><span>Release Year :  </span><input class="form-control" type="text" name="year" value="" required></p>
+							<p><span>Price : </span><input class="form-control" type="text" name="price" value="" required></p>
+							<p><span>Rating :  </span>
+								<select name="rating" class="form-control" style="width: 150px" required> 
+									<option value="" selected>                </option>
+									<option value="G"> G </option>
+									<option value="PG"> PG </option>
+									<option value="PG-13"> PG-13 </option>     
+									<option value="R"> R </option>
+								</select>
+							</p>
+							<p><span>Category : </span><span></span><br/><span></span>
+								<select multiple name="category[]" class="form-control" style="width: 150px;height: 100px" required>
+									<option value = 'Science fiction'>Science fiction</option>
+									<option value = 'Fantasy'>Fantasy</option>
+									<option value = 'Crime'>Crime</option>
+									<option value = 'Action'>Action</option>
+									<option value = 'Thriller'>Thriller</option>
+									<option value = 'Comedy'>Comedy</option>
+									<option value = 'Animated'>Animated</option>
+									<option value = 'Adventure'>Adventure</option>
+								</select>
+							</p>
+							<p><span>Upload Image :</span><span></span><input class="form-control" type="file" name="image" required /></p>
+							<p><span>Upload Synopsis :</span><span></span><input class="form-control" type="file" name="synopsis" required /></p>
+							<input type="submit" value="Update" class="submit btn btn-info" />
+
+						</form>
+						</div>
+
+						
+					</div>
+
+				</div>
 
 
+			</div>
+		</div>
 
 
 
