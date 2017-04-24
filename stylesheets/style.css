@@ -72,6 +72,7 @@ nav .btn {
 .dropdown {
     position: relative;
     display: inline-block;
+
 }
 
 .dropdown-content {
@@ -362,7 +363,7 @@ div.home {
 div.synopsis {
 	padding: 10px;
 	overflow: scroll;
-	max-height: 340px;
+	max-height: 300px;
 }
 
 #movieDetail button {
@@ -384,6 +385,134 @@ div.synopsis {
 	display: inline-block;
 	float: right;
 }
+
+/****************** shopping cart ******************/
+div.shoppingCart {
+	font-weight: bolder;
+}
+
+
+#cartListing{
+	padding: 10px 80px;
+	max-height: 400px;
+	overflow: scroll;
+}
+div.item div{
+
+
+}
+
+div.item span{
+
+}
+#cartBlock div.item:hover{
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+}
+#cartBlock div.panel-body{
+
+}
+#cartBlock div.item {
+	text-align: left;
+	margin: 5px 10px;
+	height: 120px;
+	padding: 0px;
+	width: 920px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+
+}
+#cartBlock div.image{
+	display: inline-block;
+	width: 120px;
+	padding: 0px;
+	height: 120px;
+	margin: 0px;
+	float: left;
+	
+}
+#cartBlock img{
+	width: 80px;
+	height: 120px;
+}
+
+
+#cartBlock div.info{
+	display: inline-block;
+	color: #a94442;
+	height: 120px;
+	width: 400px;
+	margin: 0px 10px;
+	text-align: center;
+	font-size: 20px;
+	float: left;
+	padding: 10px;
+
+
+
+}
+#cartBlock div.price {
+	background-color: rgba(50,0,0,0.1);
+	display: inline-block;
+	color: red;
+	padding: 20px;
+	padding-top: 40px;
+	font-size: 30px;
+	margin: 0px;
+	height: 120px;
+	width: 158px;
+	font-weight: bolder;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+
+
+}
+#cartBlock div.function {
+	display: inline-block;
+	text-align: center;
+	background-color: #d9534f;
+	padding: 40px 10px;
+	margin: 0px;
+	font-size: 20px;
+	color: white;
+	font-weight: bolder;
+	height: 120px;
+	width: 220px;
+	float: right;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;	
+}
+
+#cartBlock span.title{
+	font-size: 18px;
+	font-weight: bolder;
+
+}
+#cartBlock span.detail{
+	font-size: 16px;
+	font-weight: normal;
+}
+
+#cartBlock span.delete{
+	margin-right: 5px;
+}
+
+#checkout {
+	text-align: center;
+}
+
+#checkout span{
+	color: #a94442;
+	font-size: 30px;
+}
+#checkout button{
+	display: block;
+	float: right;
+	font-size: 30px;
+}
+
+
+
+
 
 
 section.main {

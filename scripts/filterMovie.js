@@ -18,6 +18,9 @@ $("document").ready(function() {
 
 
 	$("#filter-panel span.btn").on("click",function(){
+		$("div.home").fadeIn();
+		$("div.shoppingCart").hide();
+		$("div.history").hide();
 		search();
 
 	});
@@ -40,9 +43,12 @@ function search(){
 				}else{
 					$("div.home p.error").html(response.err).show();
 				}
-				
 
 				var list = response.list;
+				if(list.length == 0){
+					$("div.home p.error").text("No search result.");
+					$("div.home p.error").fadeIn();
+				}
 
 				// create paging
 				var count = response.list.length;
@@ -76,8 +82,8 @@ function search(){
 									var showprice = $("<span></span>").addClass("price").append("$").append(price);
 									var catdiv = $("<div></div>").addClass("category");
 									head.append(name);
-									var image = $("<img>");
-									image.attr('src',img);
+									var image = $("<img>").attr('src',img);
+								
 									body.append(image);
 							
 									foot.append(element.category[0]);

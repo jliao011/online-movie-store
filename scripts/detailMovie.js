@@ -2,7 +2,7 @@ $("document").ready(function() {
 	var id;
 
 	$("#detail span.close").click(function(){	// close login modal
-		$("#detail").css("display","none");
+		$("#detail").fadeOut();
 	});
 
 	$("body").on("click","article.movie",function(){
@@ -24,7 +24,7 @@ $("document").ready(function() {
 				$("#detail h2").text(name);
 				$("#detail p.rating").text(rating);
 				$("#detail p.year").text(year);
-				$("#detail p.price").text(price);
+				$("#detail p.price").text("$"+price);
 				$("#movieDetail p.category").text(category);
 				/// update from
 				$("form.updateMovie input[name='movie_id']").val(id);
@@ -76,7 +76,7 @@ $("document").ready(function() {
 			success: function(response){
 				if(response == ""){
 					alert("Add to Shopping Cart Successfully.");
-					$("#detail").css("display","none");
+					$("#detail").fadeOut();
 				}else{
 					alert(response);
 				}
@@ -138,7 +138,7 @@ $("document").ready(function() {
 				{
 					if(data == ""){
 						alert("Update movie "+ movie_name +" successful!");
-						$("#detail").css("display","none");
+						$("#detail").fadeOut();
 						
 					}else{
 						alert("Error: "+data);

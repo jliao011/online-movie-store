@@ -11,7 +11,7 @@ $("document").ready(function(){
 	});
 
 	$("#loginModal span.close").click(function(){	// close login modal
-		$("#loginModal").css("display","none");
+		$("#loginModal").fadeOut();
 	});
 
 	$("#registerBtn").click(function(){	// click register button
@@ -22,28 +22,31 @@ $("document").ready(function(){
 	});
 
 	$("#registerModal span.close").click(function(){	// close register modal
-		$("#registerModal").css("display","none");
+		$("#registerModal").fadeOut();
 	});
 
 	$("#shoppingCartBtn").click(function(){	// click shopping chart button
 		$("div.home").hide();
 		$("div.history").hide();
-		$("div.shoppingCart").show();
+		$("div.shoppingCart").fadeIn();
 		$.ajax();
 
 	});
 	$("#purchaseHistoryBtn").click(function(){	// click purchase history button
 		$("div.home").hide();
-		$("div.history").show();
+		$("div.history").fadeIn();
 		$("div.shoppingCart").hide();
 		$.ajax();
 
 	});
 	$("#homeBtn").click(function(){	// click home button
-		$("div.home").show();
+		$("div.home").fadeIn();
 		$("div.shoppingCart").hide();
-		$("div.history").hide();	
-		$.ajax();
+		$("div.history").hide();
+		$("input").val("");	
+		$.getScript('scripts/filterMovie.js', function() {
+		    search();
+		});
 
 	});	
 
@@ -61,6 +64,8 @@ $("document").ready(function(){
 	});
 
 	$(".admin").show();
+	$("#userInfoBtn").show();
+	
 	
 });
 
@@ -92,7 +97,7 @@ function login(){
 					$("#loginBtn").hide();
 					$("#registerBtn").hide();
 					$("#userInfoBtn").show();
-					$("#loginModal").css("display","none");
+					$("#loginModal").fadeOut();
 					if(response.usertype == "admin"){
 						$(".admin").show();
 					}else{
