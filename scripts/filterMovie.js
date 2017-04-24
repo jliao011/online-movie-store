@@ -9,7 +9,7 @@ $("document").ready(function() {
 			if(i != page){
 				$("#page"+i).hide();
 			}else{
-				$("#page"+i).show();
+				$("#page"+i).fadeIn();
 			}
 		});
 
@@ -18,7 +18,8 @@ $("document").ready(function() {
 
 
 	$("body").on("click","article.movie",function(){
-		alert("article");
+		var id = $(this).attr('id');
+		alert(id);
 	});
 
 
@@ -63,7 +64,7 @@ $("document").ready(function() {
 								data: {"movie_id":id},
 								method: "post",
 								success: function(img){
-									var display = $("<article></article>").addClass("movie panel panel-default "+id);
+									var display = $("<article></article>").addClass("movie panel panel-default").attr('id',id);
 									var head = $("<div></div>").addClass("panel-heading");
 									var body = $("<div></div>").addClass("panel-body");
 									var foot = $("<div></div>").addClass("panel-foot");
@@ -89,7 +90,7 @@ $("document").ready(function() {
 					block.hide();
 				}
 				
-				$("#page1").show();	
+				$("#page1").fadeIn();	
 
 			},
 			error: function(){

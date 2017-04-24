@@ -10,6 +10,7 @@ header {
 	border: 1px solid black;
 	background-image: url("/images/header.jpg");
 	padding: 5px 20px;
+	z-index: 1;
 
 }
 nav {
@@ -20,6 +21,7 @@ nav {
 	border-radius: 100px;
 	padding: 3px 5px;
 	background-color: rgba(1,1,1,0.3);
+	z-index: 1;
 
 }
 nav ul {
@@ -239,7 +241,7 @@ article.movie {
 	width: 200px;
 	border: 0px;
 	border-radius: 10px;
-	margin: 10px 20px;
+	margin: 10px 40px;
 
 }
 article.movie:hover {
@@ -289,6 +291,7 @@ article.movie .price {
 #listing div.block {
 	border: 1px solid black;
 	margin: 5px;
+	padding: 0px 20px;
 }
 
 
