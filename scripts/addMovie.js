@@ -6,7 +6,7 @@ $(document).ready(function () {
 		var yearFlag = false, priceFlag = false, imageFlag = false,synopsisFlag = false;
 		$("p.error").html(err);
 		e.preventDefault();
-		var movie_name = $("form.addMovie input[name='movie_name']").val();
+		var movie_name = $("form.addMovie input[name='movie_name']").val().trim();
 		var year = $("form.addMovie input[name='year']").val();
 		var price = $("form.addMovie input[name='price']").val();
 		var image = $("form.addMovie input[name='image']").val();
@@ -26,7 +26,7 @@ $(document).ready(function () {
 			yearFlag = true;
 		}
 		valiImage = image.substring(image.length-4,image.length);
-		valiSynopsis = synopsis.substring(image.length-4,image.length);
+		valiSynopsis = synopsis.substring(synopsis.length-4,synopsis.length);
 		if(valiImage != ".jpg"){
 			err += "Invalid image input, should be .jpg file.<br/>";
 			imageFlag = false;

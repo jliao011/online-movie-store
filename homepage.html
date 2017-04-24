@@ -169,7 +169,8 @@
 					</div>
 					<div class="admin" id="updateMovie">
 						<div class="input form-inline">
-						<form class="addMovie" action="" method="post" enctype="multipart/form-data">
+						<form class="updateMovie" action="" method="post" enctype="multipart/form-data">
+							<input type="text" name="movie_id" value="" style="display: none;">
 							<p><span>Movie Name : </span><input class="form-control" type="text" name="movie_name" value="" required></p>
 							<p><span>Release Year :  </span><input class="form-control" type="text" name="year" value="" required></p>
 							<p><span>Price : </span><input class="form-control" type="text" name="price" value="" required></p>
@@ -194,7 +195,7 @@
 									<option value = 'Adventure'>Adventure</option>
 								</select>
 							</p>
-							<p><span>Upload Image :</span><span></span><input class="form-control" type="file" name="image" required /></p>
+							<p><span>Upload Image :</span><span></span><input class="form-control" type="file" name="image" /></p>
 							<p><span>Upload Synopsis :</span><span></span><input class="form-control" type="file" name="synopsis" required /></p>
 							<input type="submit" value="Update" class="submit btn btn-info" />
 
