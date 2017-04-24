@@ -1,5 +1,5 @@
 body{
-	background-color: lightgray;
+	background-color: white;
 	padding-top: 150px;
 }
 
@@ -194,6 +194,10 @@ span.info {
 }
 
 /******************* add movie div ******************/
+div.addMovie {
+	display: block;
+}
+
 div.addMovie span {
 	display: inline-block;
 	width: 150px;
@@ -228,7 +232,64 @@ div.input select {
 	font-size: 16px;
 }
 
+/************** movie article *********/
 
+article.movie {
+	display: inline-block;
+	width: 200px;
+	border: 0px;
+	border-radius: 10px;
+	margin: 10px 20px;
+
+}
+article.movie:hover {
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+}
+
+article.movie .panel-heading {
+	text-align: center;
+	background-color: rgba(50,0,0,0.1);
+	height: 40px;
+	padding: 5px 5px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	font-size: 20px;
+	overflow-y: scroll;
+	font-weight: bolder;
+}
+
+article.movie .panel-body {
+	padding: 0px;
+}
+
+article.movie img {
+	width: 200px;
+	height:  300px;
+}
+article.movie .panel-foot{
+	text-align: left;
+	background-color: rgba(50,0,0,0.1);
+	height: 40px;
+	padding: 8px 5px;
+	padding-left: 8px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-size: 12px;
+	overflow-y: scroll;
+	font-weight: bold;
+}
+
+article.movie .price {
+	color: red;
+	font-size: 16px;
+	float: right;
+	display: inline-block;
+}
+
+#listing div.block {
+	border: 1px solid black;
+	margin: 5px;
+}
 
 
 section.main {
