@@ -87,7 +87,7 @@ function login(){
 			dataType: "json",
 			success: function(response){
 				if(response.err == ""){
-					alert("Login Successful.");
+					alert("Welcome back, "+username);
 					$("#userInfoBtn").text(response.username);
 					$("#loginBtn").hide();
 					$("#registerBtn").hide();

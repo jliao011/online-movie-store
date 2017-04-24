@@ -98,6 +98,7 @@ $("document").ready(function() {
 						alert("Register and login successfully.");
 						$("#userInfoBtn").text(response.username);
 						$("#loginBtn").hide();
+						$(".admin").hide();
 						$("#registerBtn").hide();
 						$("#userInfoBtn").show();
 						$("#registerModal").css("display","none");							

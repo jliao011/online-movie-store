@@ -1,5 +1,6 @@
 $("document").ready(function() {
 
+	search();
 
 	$("body").on("click","#paging span",function(){
 		var page = $(this).text();
@@ -16,11 +17,12 @@ $("document").ready(function() {
 	});
 
 
-
-
-
-
 	$("#filter-panel span.btn").on("click",function(){
+		search();
+
+	});
+
+function search(){
 		var movie_name = $("#search-name").val().trim();
 		var category = $("#search-category").val();
 		$("#listing").html("");
@@ -33,7 +35,13 @@ $("document").ready(function() {
 			method: "post",
 			dataType: "json",
 			success: function(response){
-				$("div.home p.error").html(response.err);
+				if(response.err == ""){
+					$("div.home p.error").html("").hide();
+				}else{
+					$("div.home p.error").html(response.err).show();
+				}
+				
+
 				var list = response.list;
 
 				// create paging
@@ -96,11 +104,8 @@ $("document").ready(function() {
 				alert("Error: cannot link filterMovie.php.");
 			}
 
-		});
-
-	});
-
-
+		});	
+}
 
 
 

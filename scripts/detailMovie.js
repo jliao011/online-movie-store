@@ -76,6 +76,7 @@ $("document").ready(function() {
 			success: function(response){
 				if(response == ""){
 					alert("Add to Shopping Cart Successfully.");
+					$("#detail").css("display","none");
 				}else{
 					alert(response);
 				}
@@ -137,14 +138,16 @@ $("document").ready(function() {
 				{
 					if(data == ""){
 						alert("Update movie "+ movie_name +" successful!");
+						$("#detail").css("display","none");
+						
 					}else{
 						alert("Error: "+data);
 					}
 				
 				}
-			});			
-		}
+			});	
 
+		}
 
 	}));
 

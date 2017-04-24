@@ -295,6 +295,13 @@ article.movie .price {
 	margin: 5px;
 	padding: 0px 20px;
 }
+#paging span {
+	width: 50px;
+}
+
+div.home {
+	text-align: center;
+}
 /***************** movie detail *************/
 #detail .modal-content {
 	width: 1000px;
@@ -346,14 +353,16 @@ article.movie .price {
 #movieDetail p {
 	font-weight: normal;
 	font-size: 16px;
-	display: inline-block;s
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: 5px;
 
 }
 
 div.synopsis {
 	padding: 10px;
 	overflow: scroll;
-	max-height: 350px;
+	max-height: 340px;
 }
 
 #movieDetail button {

@@ -10,7 +10,7 @@
 	$movie_id = $_POST['movie_id'];
 
 	if($user_id == ""){
-		$err = "Please login.<br/>";
+		$err = "Please login. ";
 	}else{
 		$query = "SELECT * FROM SHOPPING_CART WHERE user_id = '".$user_id."' AND movie_id = '".$movie_id."';";
 		$result = mysqli_query($mysql,$query);
@@ -19,7 +19,7 @@
 		}else{
 			$query = "INSERT INTO SHOPPING_CART VALUES ($user_id,$movie_id,0,curdate());";
 			if (!mysqli_query($mysql,$query)) {
-				$err .= $query.mysqli_error($mysql)."<br/>";
+				$err .= $query.mysqli_error($mysql).", ";
 			}
 		}
 	}
