@@ -36,7 +36,7 @@ DROP TABLE IF EXISTS CATEGORY;
 CREATE TABLE CATEGORY (
     movie_id        int             not null,
     category        varchar(40)     not null,
-    CONSTRAINT pk_category PRIMARY KEY (category),
+    CONSTRAINT pk_category PRIMARY KEY (movie_id, category),
     CONSTRAINT fk_category FOREIGN KEY (movie_id) REFERENCES MOVIE(movie_id) 
 );
 
