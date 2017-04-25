@@ -52,7 +52,7 @@ function search(){
 
 				// create paging
 				var count = response.list.length;
-				var page = Math.ceil(count /4);
+				var page = Math.ceil(count /8);
 				for(i=1;i<=page;i++){
 					var p = $("<span></span>").addClass("btn btn-danger").text(i);
 					$("#paging").append(p);
@@ -60,8 +60,8 @@ function search(){
 				for(i=0;i<page;i++){
 					var block = $("<div class = 'block'></div>").attr('id','page'+(i+1));
 					
-					for(offset=0;offset<4;offset++){
-						var index = 4*i + offset;
+					for(offset=0;offset<8;offset++){
+						var index = 8*i + offset;
 						if(index == list.length){
 							break;
 						}

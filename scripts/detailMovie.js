@@ -168,6 +168,9 @@ $("document").ready(function() {
 					if(data == ""){
 						alert("Update movie "+ movie_name +" successful!");
 						$("#detail").fadeOut();
+						$.getScript('scripts/filterMovie.js', function() {
+						    search();
+						});
 						
 					}else{
 						alert("Error: "+data);
