@@ -3,6 +3,7 @@ body{
 	padding-top: 150px;
 	background-image: url("/images/background.jpg");
 	z-index: 0;
+	height: 1000px;
 }
 
 header {
@@ -646,6 +647,7 @@ div.history {
 section.main {
 	min-height: 520px;
 /*	border: 1px solid black;*/
+	text-align: center;
 	padding: 10px;
 	margin: 0px 0px;
 	background-color: rgba(255,255,255,0.88);
@@ -665,6 +667,7 @@ footer {
 
 #slider{
 	margin: 0px 100px;
+	display: inline-block;
 }
 
 

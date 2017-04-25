@@ -59,23 +59,25 @@
 			while($pair = mysqli_fetch_array($result)){
 				$id = $pair['movie_id'];
 				$query = "SELECT * FROM MOVIE WHERE movie_id = $id AND isDeleted = 0;";
-
 				$tuple = mysqli_query($mysql,$query);
-				$movie = mysqli_fetch_array($tuple);
-				$name = $movie['movie_name'];
-				$rating = $movie['movie_rating'];
-				$year = $movie['year'];
-				$price = $movie['price'];
-				$cat_array = array();
+				if(mysqli_num_rows($tuple)!=0){
+					$movie = mysqli_fetch_array($tuple);
+					$name = $movie['movie_name'];
+					$rating = $movie['movie_rating'];
+					$year = $movie['year'];
+					$price = $movie['price'];
+					$cat_array = array();
 
-				$query = "SELECT * FROM CATEGORY WHERE movie_id = $id;";
-				$cat_result = mysqli_query($mysql,$query);
-				while($cat = mysqli_fetch_array($cat_result)){
-					$cat_temp = $cat['category'];
-					array_push($cat_array,$cat_temp);
+					$query = "SELECT * FROM CATEGORY WHERE movie_id = $id;";
+					$cat_result = mysqli_query($mysql,$query);
+					while($cat = mysqli_fetch_array($cat_result)){
+						$cat_temp = $cat['category'];
+						array_push($cat_array,$cat_temp);
+					}
+					$single_movie = array('id'=>$id,'name'=>$name,'rating'=>$rating,'year'=>$year,'price'=>$price,'category'=>$cat_array);
+					array_push($list,$single_movie);
 				}
-				$single_movie = array('id'=>$id,'name'=>$name,'rating'=>$rating,'year'=>$year,'price'=>$price,'category'=>$cat_array);
-				array_push($list,$single_movie);
+
 			}
 		}
 	}
