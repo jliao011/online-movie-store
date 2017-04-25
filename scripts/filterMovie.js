@@ -18,21 +18,28 @@ $("document").ready(function() {
 
 
 	$("#searchBtn").on("click",function(){
-		search();
-		$("div.home").fadeIn();
+		$("div.addMovie").hide();
 		$("div.shoppingCart").hide();
 		$("div.history").hide();
+		search();
+		$("div.home").fadeIn();
+		$("#paging").fadeIn();
 		
 
 	});
 
+
+
+
+
+});
 function search(){
 		var movie_name = "";
 		var category = "";
 		movie_name = $("#search-name").val().trim();
 		category = $("#search-category").val();
 		$("#listing").html("");
-		$("#paging").html("");
+		$("#paging").html("").hide();
 
 
 		$.ajax({
@@ -48,7 +55,7 @@ function search(){
 				}
 
 				var list = response.list;
-				alert(list.length);
+				
 				if(list.length == 0){
 					$("div.home p.error").text("No search result.");
 					$("div.home p.error").fadeIn();
@@ -116,8 +123,3 @@ function search(){
 
 		});	
 }
-
-
-
-});
-

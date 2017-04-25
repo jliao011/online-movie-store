@@ -1,17 +1,24 @@
 body{
 	background-color: white;
 	padding-top: 150px;
+	background-image: url("/images/background.jpg");
+	z-index: 0;
 }
 
 header {
 	position: fixed;
-	top: 0px; left: 5px; right: 5px;
+	top: 0px; left: 0px; right: 0px;
 	height: 150px;
-	border: 1px solid black;
+/*	border: 1px solid black;*/
 	background-image: url("/images/header.jpg");
 	padding: 5px 20px;
 	z-index: 1;
+	color: black;
 
+}
+header h1 {
+	font-size: 70px;
+	font-weight: bolder;
 }
 nav {
 	position: fixed;
@@ -210,7 +217,7 @@ div.addMovie span {
 }
 div.addMovie div.input {
 	display: inline-block;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	padding: 5px 30px;
 	margin: 5px 20px;
 
@@ -294,7 +301,7 @@ article.movie .price {
 }
 
 #listing div.block {
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	margin: 5px;
 	padding: 0px 20px;
 }
@@ -322,7 +329,7 @@ div.home {
 
 	width: 590px;
 	height: 550px;
-	border: 1px solid black;
+/*	border: 1px solid black;*/
 	display: inline-block;
 	text-align: left;
 	padding-left: 3px;
@@ -337,7 +344,7 @@ div.home {
 
 #movieDetail div.info {
 	width: 260px;
-	border: 1px solid black;
+/*	border: 1px solid black;*/
 	height: 480px;
 	display: inline-block;
 	float: right;
@@ -383,7 +390,7 @@ div.synopsis {
 #updateMovie {
 	width: 400px;
 	height: 550px;
-	border: 1px solid black;
+/*	border: 1px solid black;*/
 	display: inline-block;
 	float: right;
 }
@@ -632,9 +639,21 @@ div.history {
 
 
 section.main {
-	height: 1000px;
-	border: 1px solid black;
+	min-height: 520px;
+/*	border: 1px solid black;*/
 	padding: 10px;
-	margin: 10px 0px;
+	margin: 0px 0px;
+	background-color: rgba(255,255,255,0.88);
 
+}
+
+footer {
+	background-color: rgba(200,1,1,0.3);
+	height: 80px;
+	bottom: 0px;
+	background-image: url("/images/footer.jpg");
+
+	z-index: 1px;
+	left: 0px;
+	right: 0px;
 }
