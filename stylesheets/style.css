@@ -7,7 +7,7 @@ header {
 	position: fixed;
 	top: 0px; left: 5px; right: 5px;
 	height: 150px;
-	border: 1px solid black;
+	border: 0px solid black;
 	background-image: url("/images/header.jpg");
 	padding: 5px 20px;
 	z-index: 1;
@@ -42,7 +42,7 @@ nav li {
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
-	border: 1px solid black;
+	border: 0px solid black;
 	margin: 0px;
 	font-size: large;
 }
@@ -123,7 +123,7 @@ nav .btn {
     background-color: #fefefe;
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
+    border: 0px solid #888;
     width: 60%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
@@ -210,7 +210,7 @@ div.addMovie span {
 }
 div.addMovie div.input {
 	display: inline-block;
-	border: 1px solid black;
+	border: 0px solid black;
 	padding: 5px 30px;
 	margin: 5px 20px;
 
@@ -292,7 +292,7 @@ article.movie .price {
 
 
 #listing div.block {
-	border: 1px solid black;
+	border: 0px solid black;
 	margin: 5px;
 	padding: 0px 20px;
 }
@@ -631,7 +631,7 @@ div.history {
 
 section.main {
 	height: 1000px;
-	border: 1px solid black;
+	border: 0px solid black;
 	padding: 10px;
 	margin: 10px 0px;
 
