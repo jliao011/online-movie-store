@@ -289,7 +289,9 @@ article.movie .price {
 	float: right;
 	
 }
-
+#listing {
+	text-align: left;
+}
 
 #listing div.block {
 	border: 1px solid black;

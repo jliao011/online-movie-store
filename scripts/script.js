@@ -63,8 +63,8 @@ $("document").ready(function(){
 		$("div.addMovie").show();	
 	});
 
-	$(".admin").show();
-	$("#userInfoBtn").show();
+	// $(".admin").show();
+	// $("#userInfoBtn").show();
 
 
 	

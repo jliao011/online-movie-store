@@ -17,17 +17,20 @@ $("document").ready(function() {
 	});
 
 
-	$("#filter-panel span.btn").on("click",function(){
+	$("#searchBtn").on("click",function(){
+		search();
 		$("div.home").fadeIn();
 		$("div.shoppingCart").hide();
 		$("div.history").hide();
-		search();
+		
 
 	});
 
 function search(){
-		var movie_name = $("#search-name").val().trim();
-		var category = $("#search-category").val();
+		var movie_name = "";
+		var category = "";
+		movie_name = $("#search-name").val().trim();
+		category = $("#search-category").val();
 		$("#listing").html("");
 		$("#paging").html("");
 
@@ -45,6 +48,7 @@ function search(){
 				}
 
 				var list = response.list;
+				alert(list.length);
 				if(list.length == 0){
 					$("div.home p.error").text("No search result.");
 					$("div.home p.error").fadeIn();
