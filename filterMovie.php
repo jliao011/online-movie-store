@@ -60,6 +60,7 @@
 				$id = $pair['movie_id'];
 				$query = "SELECT * FROM MOVIE WHERE movie_id = $id AND isDeleted = 0;";
 				$tuple = mysqli_query($mysql,$query);
+				
 				if(mysqli_num_rows($tuple)!=0){
 					$movie = mysqli_fetch_array($tuple);
 					$name = $movie['movie_name'];

@@ -20,14 +20,18 @@
 			$date = $tuple['date'];
 			$query = "SELECT * FROM MOVIE WHERE movie_id = $movie_id AND isDeleted = 0;";
 			$record = mysqli_query($mysql,$query);
-			$movie = mysqli_fetch_array($record);
-			$movie_name = $movie['movie_name'];
-			$rating = $movie['movie_rating'];
-			$year = $movie['year'];
-			$price = $movie['price'];
+			if(mysqli_num_rows($record)!=0){
+				$movie = mysqli_fetch_array($record);
+				$movie_name = $movie['movie_name'];
+				$rating = $movie['movie_rating'];
+				$year = $movie['year'];
+				$price = $movie['price'];
 
-			$single_movie = array('id'=>$movie_id,'name'=>$movie_name,'rating'=>$rating,'year'=>$year,'price'=>$price,'date'=>$date);
-			array_push($movies, $single_movie);
+				$single_movie = array('id'=>$movie_id,'name'=>$movie_name,'rating'=>$rating,'year'=>$year,'price'=>$price,'date'=>$date);
+				array_push($movies, $single_movie);
+
+			}
+	
 
 		}
 	}
