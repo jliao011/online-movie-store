@@ -28,6 +28,7 @@ CREATE TABLE MOVIE(
     movie_rating    varchar(10)     not null,
     year            varchar(5)      not null,
     price           float(10,2)     not null,
+    isDeleted       int(2)          DEFAULT 0,
     CONSTRAINT pk_movie PRIMARY KEY (movie_id),
     CONSTRAINT uk_movie UNIQUE (movie_name)
 );
