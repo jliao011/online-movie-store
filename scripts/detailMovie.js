@@ -79,6 +79,7 @@ $("document").ready(function() {
 					$("#detail").fadeOut();
 				}else{
 					alert(response);
+
 				}
 			},
 			error: function(){
@@ -86,6 +87,34 @@ $("document").ready(function() {
 			}
 		});
 	});
+
+	$("#deleteBtn").click(function(){
+		var movie_name = $("#detail h2").html();
+		$.ajax({
+			url:"deleteMovie.php",
+			data: {"movie_name":movie_name},
+			method: "post",
+			success: function(response){
+				if(response != ""){
+					alert(response);
+				}else{
+					alert("Movie "+movie_name+" is deleted.");
+					$("#detail").fadeOut();
+					$.getScript('scripts/filterMovie.js', function() {
+					    search();
+					});
+
+				}
+			},
+			error: function(){
+				alert("cannot delete movie.");
+			}		
+		});
+	});
+
+
+
+
 
 	$("form.updateMovie").on('submit',(function(e) {
 		var err = "";

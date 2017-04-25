@@ -2,7 +2,7 @@ $("document").ready(function(){
 	$("#checkout span.price").hide();
 
 	/// delete from shopping cart
-	$("body").on("click","div.item span.delete",function(){
+	$("body").on("click","#cartListing div.item span.delete",function(){
 		var itemClass = $(this).parent().parent().attr('id');
 		var id = itemClass.substring(4,itemClass.length);
 		$.ajax({

@@ -12,7 +12,7 @@
 
 
 	if($movie_name != ""){
-		$query = "SELECT * FROM MOVIE WHERE movie_name LIKE '%".$movie_name."%';";
+		$query = "SELECT * FROM MOVIE WHERE movie_name LIKE '%".$movie_name."%' AND isDeleted = 0;";
 		$result = mysqli_query($mysql,$query);
 		while($movie = mysqli_fetch_array($result)){
 			$id = $movie['movie_id'];
@@ -33,7 +33,7 @@
 		}
 	}else{
 		if($category == ""){
-			$query = "SELECT * FROM MOVIE;";
+			$query = "SELECT * FROM MOVIE WHERE isDeleted = 0;";
 			$result = mysqli_query($mysql,$query);
 			while($movie = mysqli_fetch_array($result)){
 				$id = $movie['movie_id'];
@@ -58,7 +58,7 @@
 
 			while($pair = mysqli_fetch_array($result)){
 				$id = $pair['movie_id'];
-				$query = "SELECT * FROM MOVIE WHERE movie_id = $id;";
+				$query = "SELECT * FROM MOVIE WHERE movie_id = $id AND isDeleted = 0;";
 
 				$tuple = mysqli_query($mysql,$query);
 				$movie = mysqli_fetch_array($tuple);
@@ -91,7 +91,7 @@
 			$price = $movie['price'];
 			$cat_array = array();
 
-			$query = "SELECT * FROM CATEGORY WHERE movie_id = $id;";
+			$query = "SELECT * FROM CATEGORY WHERE movie_id = $id AND isDeleted = 0;";
 			$cat_result = mysqli_query($mysql,$query);
 			while($cat = mysqli_fetch_array($cat_result)){
 				$cat_temp = $cat['category'];

@@ -10,6 +10,7 @@
 	<script src="/scripts/filterMovie.js" type="text/javascript"></script>
 	<script src="/scripts/detailMovie.js" type="text/javascript"></script>
 	<script src="/scripts/cart.js" type="text/javascript"></script>
+	<script src="/scripts/history.js" type="text/javascript"></script>
 
 
 
@@ -200,7 +201,7 @@
 							<p><span>Upload Image :</span><span></span><input class="form-control" type="file" name="image" /></p>
 							<p><span>Upload Synopsis :</span><span></span><input class="form-control" type="file" name="synopsis" required /></p>
 							<input type="submit" value="Update" class="submit btn btn-info" style="width: 150px" />
-
+							<button id="deleteBtn" class="btn btn-warning" style="width: 150px">Delete</button>
 						</form>
 						</div>
 
@@ -249,8 +250,63 @@
 		</div>
 
 		<!-- *********** purchase history ********** -->
-		<div class="history">
-			<h2>Purchase History:</h2>
+		<div class="history panel panel-danger">
+			<div class="panel-heading">
+				<h2>History:</h2>
+			</div>
+
+			<div class="panel-body">
+				<p class="error alert-danger"> </p>
+
+				<div class="panel-body" id="historyListing">
+					<div class="item">
+						<div class="image"><img src="inventory/images/1.jpg" alt="image"></div>
+						<div class="info">
+							<span class="title">A dog's purpose<hr></span>
+							<span class="detail">Year: 2016 Rating: PG</span>
+						</div>
+						<div class="price">
+							<span class="price"> $99.99</span>
+						</div>
+						<div class="function">
+							<span class="delete btn btn-danger"><i class="material-icons" style="font-size: 30px">delete_forever</i></span>
+							<span class="select">Select: <input type="checkbox" name="select" value="" style="zoom:1.5;"></span>
+
+						</div>
+					</div>
+					<div class="item">
+						<div class="image"><img src="inventory/images/1.jpg" alt="image"></div>
+						<div class="info">
+							<span class="title">A dog's purpose<hr></span>
+							<span class="detail">Year: 2016 Rating: PG</span>
+						</div>
+						<div class="price">
+							<span class="price"> $99.99</span>
+						</div>
+						<div class="function">
+							<span class="delete btn btn-danger"><i class="material-icons" style="font-size: 30px">delete_forever</i></span>
+							<span class="select">Select: <input type="checkbox" name="select" value="" style="zoom:1.5;"></span>
+
+						</div>
+					</div>
+					<div class="item">
+						<div class="image"><img src="inventory/images/1.jpg" alt="image"></div>
+						<div class="info">
+							<span class="title">A dog's purpose<hr></span>
+							<span class="detail">Year: 2016 Rating: PG</span>
+						</div>
+						<div class="price">
+							<span class="price"> $99.99</span>
+						</div>
+						<div class="function">
+							<span class="delete btn btn-danger"><i class="material-icons" style="font-size: 30px">delete_forever</i></span>
+							<span class="select">Select: <input type="checkbox" name="select" value="" style="zoom:1.5;"></span>
+
+						</div>
+					</div>					
+				</div>
+
+			</div>
 		</div>
 
 

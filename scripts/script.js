@@ -29,7 +29,7 @@ $("document").ready(function(){
 		$("div.home").hide();
 		$("div.history").hide();
 		$("div.shoppingCart").fadeIn();
-		$.ajax();
+
 
 	});
 	$("#purchaseHistoryBtn").click(function(){	// click purchase history button
@@ -65,7 +65,8 @@ $("document").ready(function(){
 
 	$(".admin").show();
 	$("#userInfoBtn").show();
-	
+
+
 	
 });
 

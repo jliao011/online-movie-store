@@ -8,7 +8,7 @@
 
 	$user_id = $_SESSION['id'];
 	if($user_id == ""){
-		$err .= "Session expires, please re-login.<>";
+		$err .= "Session expires, please re-login.";
 	}
 	else{
 		$movies = array();
