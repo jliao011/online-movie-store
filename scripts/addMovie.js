@@ -60,6 +60,9 @@ $(document).ready(function () {
 					if(data == ""){
 						$("div.addMovie p.error").hide();
 						alert("Add movie "+ movie_name +" successful!");
+						$.getScript('scripts/filterMovie.js', function() {
+						    search();
+						});						
 					}else{
 						$("div.addMovie p.error").show();
 						$("div.addMovie p.error").html(data);
