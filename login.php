@@ -10,7 +10,7 @@
 
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$username = text_input($_POST['username']);
-		$password = text_input($_POST['password']);
+		$password = sha1(text_input($_POST['password']));
 	}
 	
 	$redirect ="";

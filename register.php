@@ -14,7 +14,7 @@
 	$query = "SELECT * FROM USER WHERE user_name = '".$username."' OR user_email = '".$email."';";
 	$result = $conn -> query($query);
 	if(mysqli_num_rows($result) == 0){
-		$sha1pwd = $password;
+		$sha1pwd = sha1($password);
 		$query = 'INSERT INTO `user`(`user_email`, `user_name`, `password`) VALUES ("'.$email.'","'.$username.'","'.$sha1pwd.'");';
 		$result = $conn -> query($query);
 		$_SESSION['username'] = $username;
