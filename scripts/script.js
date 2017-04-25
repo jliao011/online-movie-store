@@ -113,6 +113,7 @@ function login(){
 					$("#loginModal").fadeOut();
 					if(response.usertype == "admin"){
 						$(".admin").show();
+						$("div.addMovie").hide();
 					}else{
 						$(".admin").hide();
 					}
