@@ -377,7 +377,7 @@ div.home {
 
 div.synopsis {
 	padding: 10px;
-	overflow: scroll;
+	overflow-y: scroll;
 	max-height: 300px;
 }
 
