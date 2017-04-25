@@ -3,7 +3,7 @@ body{
 	padding-top: 150px;
 	background-image: url("/images/background.jpg");
 	z-index: 0;
-	height: 1000px;
+	height: 800px;
 }
 
 header {
@@ -645,7 +645,7 @@ div.history {
 
 
 section.main {
-	min-height: 520px;
+	min-height: 600px;
 /*	border: 1px solid black;*/
 	text-align: center;
 	padding: 10px;
