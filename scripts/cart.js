@@ -1,9 +1,10 @@
 $("document").ready(function(){
+	$("#checkout span.price").hide();
 
 	/// delete from shopping cart
 	$("body").on("click","div.item span.delete",function(){
 		var itemClass = $(this).parent().parent().attr('id');
-		var id = itemClass.substring(4,5);
+		var id = itemClass.substring(4,itemClass.length);
 		$.ajax({
 			url:"deleteCart.php",
 			data: {"movie_id":id},
@@ -21,16 +22,78 @@ $("document").ready(function(){
 	});
 
 	/// select item
+	var totalprice = 0.0;
 	$("body").on("change","div.item input[type='checkbox']",function(){	
-		var totalprice = 0;
-		var itemClass = $(this).parent().parent().parent().attr('id');
-		var id = itemClass.substring(4,5);
-		var checked = $(this).is(':checked');
-		if(checked == true){
-			var price = $("#cart"+id+" span.price").val();
-			alert(price);
-		}
 		
+		var itemClass = $(this).parent().parent().parent().attr('id');
+		var id = itemClass.substring(4,itemClass.length);
+		var checked = $(this).is(':checked');
+		var pricetemp = $("#cart"+id+" span.price").html();
+		var price = parseFloat(pricetemp.substring(1,pricetemp.length));
+
+		if(checked == true){
+			totalprice += price;
+		}else{
+			totalprice -= price;
+		}
+		if(totalprice!=0){
+			$("#checkout span.price").html("Total Price: $"+totalprice.toFixed(2));
+			$("#checkout span.price").fadeIn();
+		}else{
+			$("#checkout span.price").fadeOut(function(){
+				$("#checkout span.price").html("Total Price: $"+totalprice.toFixed(2));
+			});
+			
+		}
+	});
+
+
+
+
+	/// check out
+	$("body").on("click","#checkout button",function(){	
+		var pricetemp = $("#checkout span.price").html();
+		var price = parseFloat(pricetemp.substring(14,pricetemp.length));
+		if(price == 0){
+			alert("Please select an item to check out.");
+		}else{
+
+			var ids = [];
+			$("div.item input[type='checkbox']").each(function(){
+				if($(this).is(':checked')){
+					var itemClass = $(this).parent().parent().parent().attr('id');
+					var id = itemClass.substring(4,itemClass.length);
+					ids.push(id); 
+				}
+
+			});
+			alert("Checking out "+ids.length+" movies, your charge is totally $"+price+".");
+			var err = "";
+			for(i=0;i<ids.length;i++){
+				var movie_id = ids[i];
+				$.ajax({
+					url:"checkout.php",
+					method: "post",
+					data: {'movie_id':movie_id},
+					success: function(response){
+						err += response;
+					},
+					error: function(){
+						alert("Error at checking out.");
+						cart();
+					}
+				});
+			}
+
+			if(err == ""){
+				alert("Check out successfully.");
+				cart();
+			}else{
+				alert(err);
+			}
+		}
+
+
 	});
 
 
@@ -45,7 +108,14 @@ $("document").ready(function(){
 
 
 function cart(){
+		totalprice = 0;
+		$("#cartListing").hide();
 		$("#cartListing").html("");
+		$("div.item input[type='checkbox']").each(function(){
+			$(this).attr('checked',false);
+		});
+		$("#checkout span.price").html("Total Price: $0.00");
+		$("#checkout span.price").hide();
 		$.ajax({
 			url:"cart.php",
 			method: "post",
@@ -60,8 +130,12 @@ function cart(){
 				var list = response.list;
 				if(list.length == 0){
 					$("div.shoppingCart h2").text("No item in your shopping cart.");
+					$("#cartBlock").hide();
+					$("#checkout").hide();
 				}else{
 					$("div.shoppingCart h2").text("You have "+list.length+" item(s) in your shopping cart.");
+					$("#cartBlock").fadeIn();
+					$("#checkout").fadeIn();
 				}
 				for(i=0;i<list.length;i++){
 					var element = list[i];
@@ -107,11 +181,14 @@ function cart(){
 						});
 					})(element);
 				}
+			$("#cartListing").fadeIn();
 			},
 			error: function(){
 				alert("Error: cannot link cart.php");
 			}		
 		});
+
+
 }
 
 
