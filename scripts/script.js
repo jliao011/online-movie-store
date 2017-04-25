@@ -60,8 +60,8 @@ $("document").ready(function(){
 		login();
 	});
 
-	$("#userInfoBtn").show();
-	$(".admin").show();
+	// $("#userInfoBtn").show();
+	// $(".admin").show();
 
 
 
