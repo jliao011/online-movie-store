@@ -1,5 +1,8 @@
 $("document").ready(function(){
 	initial();
+	$("#slider").fadeIn();
+	$("#paging").fadeIn();
+
 
 
 // *************** event *************
@@ -25,6 +28,7 @@ $("document").ready(function(){
 	});
 
 	$("#shoppingCartBtn").click(function(){	// click shopping chart button
+		$("#slider").hide();
 		$("div.addMovie").hide();
 		$("div.home").hide();
 		$("div.history").hide();
@@ -33,6 +37,7 @@ $("document").ready(function(){
 
 	});
 	$("#purchaseHistoryBtn").click(function(){	// click purchase history button
+		$("#slider").hide();
 		$("div.home").hide();
 		$("div.shoppingCart").hide();
 		$("div.addMovie").hide();
@@ -46,6 +51,7 @@ $("document").ready(function(){
 		$("input").val("");	
 
 		$("#filter-panel").collapse("hide");
+		$("#slider").fadeIn();
 		load();
 		$("div.home").fadeIn();
 	});	
@@ -54,12 +60,13 @@ $("document").ready(function(){
 		login();
 	});
 
-	// $("#userInfoBtn").show();
-	// $(".admin").show();
+	$("#userInfoBtn").show();
+	$(".admin").show();
 
 
 
 	$("#addMovieBtn").click(function(){	// admin add movie
+		$("#slider").hide();
 		$("div.home").hide();
 		$("div.shoppingCart").hide();
 		$("div.history").hide();	
@@ -74,11 +81,13 @@ $("document").ready(function(){
 });
 
 function initial(){
-	$("div.home").fadeIn();
 	$("div.shoppingCart").hide();
 	$("div.history").hide();	
 	$(".admin").hide();
 	$("#userInfoBtn").hide();
+
+	$("div.home").fadeIn();
+
 }
 
 function login(){
@@ -117,11 +126,12 @@ function login(){
 		});		
 	}
 }
+
 function load(){
 		var movie_name = "";
 		var category = "";
 		$("#listing").html("");
-		$("#paging").html("").hide();
+		$("#paging").hide().html("");
 		$.ajax({
 			url:"filterMovie.php",
 			data: {"movie_name":movie_name,"category":category},

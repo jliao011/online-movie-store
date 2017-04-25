@@ -18,6 +18,7 @@ $("document").ready(function() {
 
 
 	$("#searchBtn").on("click",function(){
+		$("#slider").hide();
 		$("div.addMovie").hide();
 		$("div.shoppingCart").hide();
 		$("div.history").hide();

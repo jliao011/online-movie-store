@@ -62,7 +62,7 @@ nav li {
 }
 /************ drop btn ********* */        
 nav .btn {
-	width: 100px;
+	width: 120px;
 	font-weight: bolder;
 	border-radius: 50px;
 	opacity: 0.8;
@@ -98,6 +98,7 @@ nav .btn {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-size: 12px;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1}
@@ -206,6 +207,10 @@ span.info {
 /******************* add movie div ******************/
 div.addMovie {
 	display: block;
+
+}
+div.addMovie .panel-body{
+	text-align: center;
 }
 
 div.addMovie span {
@@ -657,3 +662,15 @@ footer {
 	left: 0px;
 	right: 0px;
 }
+
+#slider{
+	margin: 0px 100px;
+}
+
+
+.mySlides {
+	display:none;
+
+}
+ .w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:17px;padding:0}

@@ -130,6 +130,39 @@
 		</div> 
 
 
+	<!-- *********** Slider *************-->
+ 
+ 		<div id="slider" class="w3-content w3-display-container" style="max-width:1000px;display: none;">
+   			<img class="mySlides" src="images/1.jpg" style="width:100%">
+   			<img class="mySlides" src="images/2.jpg" style="width:100%">
+   			<img class="mySlides" src="images/3.jpg" style="width:100%">
+ 
+     			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    			<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  			</div>
+		</div>
+ 		<script>
+ 			var slideIndex = 0;
+ 			carousel();
+ 
+ 			function carousel() {
+     			var i;
+     			var x = document.getElementsByClassName("mySlides");
+     			for (i = 0; i < x.length; i++) {
+       				x[i].style.display = "none"; 
+     			}
+     			slideIndex++;
+     			if (slideIndex > x.length) {slideIndex = 1} 
+     			x[slideIndex-1].style.display = "block"; 
+     			setTimeout(carousel, 3000);
+ 			}		
+ 		</script>
+ 
+
+
+
+
 		<!-- *********** home page for listing movies ********** -->
 		<div class="home">
 			<p class="error alert-danger">Error: </p><hr/>
@@ -312,10 +345,9 @@
 
 
 		<!-- **********  add movie module  ********** -->
-		<div class="admin addMovie panel panel-info">
+		<div class="admin addMovie panel panel-danger">
 			<div class="panel-heading">
-				<h1>  Adding a Movie:  </h1> 
-				<h3> * Required Fields </h3>                
+				<h1>  Adding a Movie:  </h1>               
 			</div>
 			<div class="panel-body">
 				<p class="error alert-danger"></p>
