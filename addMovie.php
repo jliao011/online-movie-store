@@ -9,8 +9,12 @@
 	$movie_name = mysqli_real_escape_string($conn,$_POST['movie_name']);
 	$query = "SELECT * FROM MOVIE WHERE movie_name = '".$movie_name."';";
 	$result = mysqli_query($conn,$query);
+
 	if(mysqli_num_rows($result)!=0){
-		$query = "UPDATE MOVIE SET isDeleted = 0 WHERE movie_name = '".$movie_name."';";
+		$rating = $_POST['rating'];
+		$year = $_POST['year'];
+		$price = $_POST['price'];
+		$query = "UPDATE MOVIE SET isDeleted = 0,movie_rating = '".$rating."',year = $year, price = $price WHERE movie_name = '".$movie_name."';";
 		if (!mysqli_query($conn,$query)) {
 			$err .= "Error: ".$query.mysqli_error($conn).", ";
 		}	
